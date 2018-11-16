@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:livescore/materialui/cardview.dart';
 
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
   @override
@@ -8,6 +12,23 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
+  Map data;
+  List dataList;
+
+  Future getDataTZ() async {
+    http.Response response = await http.get("http://192.168.2.111/phprest/api/timezoneName.php");
+    data = json.decode(response.body);
+    setState(() {
+         dataList = data["data"];   
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getDataTZ();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
