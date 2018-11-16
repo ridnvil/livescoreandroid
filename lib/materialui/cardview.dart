@@ -6,6 +6,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
+Future<Data> getData() async {
+  final respon = await http.get('http://192.168.2.111/phprest/api/match/matchLive.php');
+
+  print(respon.body);
+}
+
 class Data {
   final String status;
   final List message;
@@ -17,7 +23,7 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json){
     int i;
     return Data(
-      status: json[i],
+      status: json['status'],
       message: json['message'],
       rownum: json[i],
       data: json['contest']
@@ -34,30 +40,11 @@ class LiveMatch extends StatefulWidget {
 }
 
 class _LiveMatchState extends State<LiveMatch> {
-  
-  Future<Data> getData() async {
-    final respon = await http.get('http://192.168.2.111/phprest/api/match/matchLive.php');
-
-    print(respon.body);
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new ListView.builder(
-        itemBuilder: (BuildContext context, int index){
-          return new FlatButton(
-            child: Column(
-              children: <Widget>[
-                new Text('Test'),
-              ],
-            ),
-            onPressed: (){
-              getData();
-            },
-          );
-        },
-      ),
+      
     );
   }
 }
