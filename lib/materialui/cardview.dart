@@ -5,7 +5,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:livescore/config/apiprovider.dart';
 
 class Data {
   final String status;
