@@ -22,11 +22,10 @@ class _LiveMatchState extends State<LiveMatch> {
 
   Future getDataLive() async {
     http.Response response =
-        await http.get("http://192.168.2.111/phprest/api/match/matchLive.php?Post_Name_Timezone=");
+        await http.get("http://192.168.2.111/phprest/api/match/matchLive.php");
     data = json.decode(response.body);
     setState(() {
       dataList = data["data"];
-      dataList = num_row["row_num"];
     });
     debugPrint(dataList.toString());
   }

@@ -12,23 +12,6 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
-  Map data;
-  List dataList;
-
-  Future getDataTZ() async {
-    http.Response response = await http.get("http://192.168.2.111/phprest/api/timezoneName.php");
-    data = json.decode(response.body);
-    setState(() {
-         dataList = data["data"];   
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getDataTZ();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
