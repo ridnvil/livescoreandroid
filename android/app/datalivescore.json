@@ -1,0 +1,2095 @@
+{
+    "status": 1,
+    "message": [],
+    "row_num": 232,
+    "data": [
+        {
+            "contest": "EASTC",
+            "time": "14:10:00",
+            "status": "46 2nd",
+            "home": "[2-4]Mongolia(N)",
+            "score": "0 - 2",
+            "away": "Hong Kong,China[2-2]",
+            "ht": "0-2"
+        },
+        {
+            "contest": "AUS WAL",
+            "time": "15:30:00",
+            "status": "1",
+            "home": "Melbourne City Women s",
+            "score": " - ",
+            "away": "Melbourne Victory Women s",
+            "ht": " - "
+        },
+        {
+            "contest": "IDN D1",
+            "time": "15:30:00",
+            "status": "1",
+            "home": "[1]PSM Makassar",
+            "score": " - ",
+            "away": "Persija Jakarta[3]",
+            "ht": " - "
+        },
+        {
+            "contest": "IND D1",
+            "time": "15:30:00",
+            "status": "1",
+            "home": "[11]Aizawl FC",
+            "score": " - ",
+            "away": "Chennai City[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "IDN D2",
+            "time": "15:30:00",
+            "status": "1",
+            "home": "PSS Sleman",
+            "score": " - ",
+            "away": "Persita Tangerang",
+            "ht": " - "
+        },
+        {
+            "contest": "KAZ D1",
+            "time": "16:00:00",
+            "status": "1",
+            "home": "[3]Tarlan Shymkent",
+            "score": " - ",
+            "away": "Irtysh Pavlodar[10]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA U19",
+            "time": "16:00:00",
+            "status": "1",
+            "home": "[K4]Cyprus(U19)",
+            "score": " - ",
+            "away": "Russia(U19)[K1]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA U19",
+            "time": "16:00:00",
+            "status": "1",
+            "home": "[K3]Montenegro(U19)",
+            "score": " - ",
+            "away": "Latvia(U19)[K2]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "16:00:00",
+            "status": "1",
+            "home": "[5]Botev Plovdiv",
+            "score": " - ",
+            "away": "Botev Galabovo[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA U19",
+            "time": "16:00:00",
+            "status": "1",
+            "home": "[K3]Montenegro(U19)(N)",
+            "score": " - ",
+            "away": "Latvia(U19)[K2]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:30:00",
+            "status": "1",
+            "home": "Beitar Nahariya",
+            "score": " - ",
+            "away": "Maccabi Ahva Yarka",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "16:45:00",
+            "status": "1",
+            "home": "[4]Hapoel Bnei Zalfa",
+            "score": " - ",
+            "away": "Moadon Sport Tira[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:45:00",
+            "status": "1",
+            "home": "Beitar Ironi Kiryat Gat",
+            "score": " - ",
+            "away": "Maccabi Ashdod",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:45:00",
+            "status": "1 ",
+            "home": "Bnei Majd Kurum",
+            "score": " - ",
+            "away": "Elnahada Nazereth",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:45:00",
+            "status": "1",
+            "home": "Beitar Givat Zeev Shevi",
+            "score": " - ",
+            "away": "SC Hapoel Lod",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:45:00",
+            "status": "1",
+            "home": "Beitar Ironi Maale Adumim",
+            "score": " - ",
+            "away": "Hapoel Yeroham",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "16:45:00",
+            "status": "1",
+            "home": "Beitar Ironi Maale Adumim",
+            "score": " - ",
+            "away": "Hapoel Yeruham",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Italy(U19)",
+            "score": " - ",
+            "away": "Hungary(U19)",
+            "ht": " - "
+        },
+        {
+            "contest": "JAP FutL",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Fugador Sumida Futsal",
+            "score": " - ",
+            "away": "Fuchu Athletic FC Futsal",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "[11]Agudat Sport Nordia Jerusalem",
+            "score": " - ",
+            "away": "Hapoel Holon Yaniv[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "[16]Hapoel Asi Gilboa",
+            "score": " - ",
+            "away": "Hapoel Jerusalem[11]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Roei Heshbon Tel Aviv",
+            "score": " - ",
+            "away": "Hapoel Ihud Bnei Jatt",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Hapoel Nahlat Yehuda Rishon LeZion",
+            "score": " - ",
+            "away": "Tzeirey Taibe",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Maccabi Ironi Sderot",
+            "score": " - ",
+            "away": "FC Dimona",
+            "ht": " - "
+        },
+        {
+            "contest": "ITA YCup",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "[B3]Pescara Youth",
+            "score": " - ",
+            "away": "Sassuolo Calcio Youth[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "[17]GKS Katowice",
+            "score": " - ",
+            "away": "Gornik Zabrze[14]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "Balmazujvarosi FC",
+            "score": " - ",
+            "away": "Diosgyor VTK",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "17:00:00",
+            "status": "1",
+            "home": "[12]Szombathelyi Haladas",
+            "score": " - ",
+            "away": "MTE Mosonmagyarovar[20]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "17:30:00",
+            "status": "1",
+            "home": "[50]Japan",
+            "score": " - ",
+            "away": "Venezuela[29]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "17:30:00",
+            "status": "1",
+            "home": "[3]Ironi Tiberias",
+            "score": " - ",
+            "away": "Hapoel Herzliya[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "17:30:00",
+            "status": "1",
+            "home": "[8]Maccabi Kiryat Gat",
+            "score": " - ",
+            "away": "Maccabi Kabilio Jaffa[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "IND GoaPL",
+            "time": "17:30:00",
+            "status": "1 ",
+            "home": "Guardian Angel SC",
+            "score": " - ",
+            "away": "Sporting Clube de Goa",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "17:30:00",
+            "status": "1 ",
+            "home": "Hapoel Hod HaSharon",
+            "score": " - ",
+            "away": "Bnei Jaffa Ortodoxim",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "17:30:00",
+            "status": "1",
+            "home": "Bnei Yeechalal Rehovot FC",
+            "score": " - ",
+            "away": "Ironi Kuseife",
+            "ht": " - "
+        },
+        {
+            "contest": "IND GoaPL",
+            "time": "17:30:00",
+            "status": "1",
+            "home": "Sporting Clube de Goa",
+            "score": " - ",
+            "away": "Guardian Angel SC",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Croatia(U20)",
+            "score": " - ",
+            "away": "Belarus(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Italy U18",
+            "score": " - ",
+            "away": "Czech Republic (U18)",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "[10]Hapoel Migdal HaEmek",
+            "score": " - ",
+            "away": "Hapoel Umm Al Fahm[2]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "[6]Maccabi Tzur Shalom",
+            "score": " - ",
+            "away": "Ironi Nesher[14]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "18:00:00",
+            "status": "1 ",
+            "home": "Shimshon Tel Aviv",
+            "score": " - ",
+            "away": "Maccabi Ironi Amishav Petah Tikva",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Maccabi Modi in",
+            "score": " - ",
+            "away": "Shikun HaMizrah",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Ironi Beit Dagan",
+            "score": " - ",
+            "away": "Hapoel Kiryat Ono",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "[16]Zaglebie Sosnowiec",
+            "score": " - ",
+            "away": "Wisla Krakow[4]",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Steaua Bucuresti II",
+            "score": " - ",
+            "away": "Sportul Chiscani",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "18:00:00",
+            "status": "1",
+            "home": "Croatia(U20)",
+            "score": " - ",
+            "away": "Belarus(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "EASTC",
+            "time": "18:10:00",
+            "status": "1",
+            "home": "[2-3]Chinese Taipei",
+            "score": " - ",
+            "away": "North Korea[2-1]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:15:00",
+            "status": "1",
+            "home": "[13]Hapoel Kafr Kanna",
+            "score": " - ",
+            "away": "Maccabi Ironi Kiryat Ata[8]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:15:00",
+            "status": "1",
+            "home": "[13]Hapoel Azor",
+            "score": " - ",
+            "away": "Beitar Kfar Saba Shlomi[14]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:15:00",
+            "status": "1",
+            "home": "[5]Maccabi Sha arayim",
+            "score": " - ",
+            "away": "Kfar Kasem[4]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:30:00",
+            "status": "1",
+            "home": "[12]Shimshon Kfar Qasem",
+            "score": " - ",
+            "away": "Hapoel Bikat Hayarden[16]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "18:30:00",
+            "status": "1",
+            "home": "[6]Maccabi Herzliya",
+            "score": " - ",
+            "away": "Hakoah Amidar Ramat Gan FC[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "IDN D1",
+            "time": "18:30:00",
+            "status": "1",
+            "home": "[12]Persela Lamongan",
+            "score": " - ",
+            "away": "Arema Malang[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "18:30:00",
+            "status": "1 ",
+            "home": "FC Ironi Or Yehuda",
+            "score": " - ",
+            "away": "Beitar Petah Tikva",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "18:50:00",
+            "status": "1",
+            "home": "[B6]Al Jubail",
+            "score": " - ",
+            "away": "Hottain[B2]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Serbia(U21)",
+            "score": " - ",
+            "away": "FYR Macedonia(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "CS Municipal Lugoj",
+            "score": " - ",
+            "away": "Cetate Deva",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "FC Unirea Alba Iulia",
+            "score": " - ",
+            "away": "Industria Galda",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Metalurgistul Cugir",
+            "score": " - ",
+            "away": "ACS Dumbravita",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Maccabi Tamra",
+            "score": " - ",
+            "away": "Maccabi Bnei Nahaf Qasem",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D4",
+            "time": "19:00:00",
+            "status": "1 ",
+            "home": "Beitar Ramat Gan",
+            "score": " - ",
+            "away": "Shimshon Bnei Tayibe",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Astra Giurgiu II",
+            "score": " - ",
+            "away": "Pucioasa",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "ACS Foresta Suceava",
+            "score": " - ",
+            "away": "Ceahlaul Piatra Neamt",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Inainte Modelu",
+            "score": " - ",
+            "away": "Agricola Borcea",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Gloria Popesti-Leordeni",
+            "score": " - ",
+            "away": "Medgidia",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "FC Botosani B",
+            "score": " - ",
+            "away": "CSM Ramnicu Sarat",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "CS Universitatea Craiova B",
+            "score": " - ",
+            "away": "Vointa Turnu Magurele",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "19:00:00",
+            "status": "1 ",
+            "home": "Stal Mielec",
+            "score": " - ",
+            "away": "Korona Kielce",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Odorheiu Secuiesc",
+            "score": " - ",
+            "away": "MSE Targu Mures",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Unirea Dej",
+            "score": " - ",
+            "away": "ACS Gloria Bistrita",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "BFC Siofok",
+            "score": " - ",
+            "away": "Vac-Dunakanyar",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "ACS Ghiroda",
+            "score": " - ",
+            "away": "National Sebis",
+            "ht": " - "
+        },
+        {
+            "contest": "ROM D3",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Gaz Metan Medias II",
+            "score": " - ",
+            "away": "ACS Olimpic Cetate Rasnov",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "19:00:00",
+            "status": "1",
+            "home": "Serbia(U20)(N)",
+            "score": " - ",
+            "away": "FYR Macedonia(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:05:00",
+            "status": "1",
+            "home": "[A10]Al-Draih",
+            "score": " - ",
+            "away": "Al-Taqdom[A3]",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:05:00",
+            "status": "1",
+            "home": "[A5]Al-Riyadh",
+            "score": " - ",
+            "away": "Al-Akhdoud[A12]",
+            "ht": " - "
+        },
+        {
+            "contest": "ISR D3",
+            "time": "19:15:00",
+            "status": "1",
+            "home": "[15]Hapoel Shfaram",
+            "score": " - ",
+            "away": "Hapoel Kaukab[12]",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:15:00",
+            "status": "1",
+            "home": "[B10]Al-Arabi",
+            "score": " - ",
+            "away": "Afief[B8]",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:20:00",
+            "status": "1",
+            "home": "[A4]Al-Jndal",
+            "score": " - ",
+            "away": "Al Hjazz[A6]",
+            "ht": " - "
+        },
+        {
+            "contest": "AFF SC",
+            "time": "19:30:00",
+            "status": "1",
+            "home": "[A5]Laos",
+            "score": " - ",
+            "away": "Myanmar[A2]",
+            "ht": " - "
+        },
+        {
+            "contest": "AFF SC",
+            "time": "19:30:00",
+            "status": "1",
+            "home": "[A3]Viet Nam",
+            "score": " - ",
+            "away": "Malaysia[A1]",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:30:00",
+            "status": "1",
+            "home": "[B7]Wajj",
+            "score": " - ",
+            "away": "Al-Watani[B4]",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:30:00",
+            "status": "1",
+            "home": "[B11]Al Drae",
+            "score": " - ",
+            "away": "Al Kholood[B12]",
+            "ht": " - "
+        },
+        {
+            "contest": "UAE D1",
+            "time": "19:40:00",
+            "status": "1",
+            "home": "Masafi",
+            "score": " - ",
+            "away": "Al Taawon",
+            "ht": " - "
+        },
+        {
+            "contest": "UAE D1",
+            "time": "19:40:00",
+            "status": "1",
+            "home": "Al Oruba(UAE)",
+            "score": " - ",
+            "away": "Hatta Club",
+            "ht": " - "
+        },
+        {
+            "contest": "KSA D2",
+            "time": "19:40:00",
+            "status": "1",
+            "home": "[A8]Al-Suqoor",
+            "score": " - ",
+            "away": "Al-Muzahmiyya[A7]",
+            "ht": " - "
+        },
+        {
+            "contest": "CAF NC",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "[C4]South Sudan",
+            "score": " - ",
+            "away": "Burundi[C3]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "Ukraine(U21)",
+            "score": " - ",
+            "away": "Georgia(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "France(U20)",
+            "score": " - ",
+            "away": "Switzerland(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "[99]Palestine",
+            "score": " - ",
+            "away": "Pakistan[199]",
+            "ht": " - "
+        },
+        {
+            "contest": "QAT CUP",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "[B5]Al-Sailiya",
+            "score": " - ",
+            "away": "Al-Sadd[B4]",
+            "ht": " - "
+        },
+        {
+            "contest": "ENG U23D2",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "[2]Leeds United U23",
+            "score": " - ",
+            "away": "Birmingham U23[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:00:00",
+            "status": "1 ",
+            "home": "[7]Sturm Graz",
+            "score": " - ",
+            "away": "SV Ried[3]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:00:00",
+            "status": "1 ",
+            "home": "[16]MSV Duisburg",
+            "score": " - ",
+            "away": "VfL Osnabruck[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:00:00",
+            "status": "1 ",
+            "home": "SC Wiener Neustadt",
+            "score": " - ",
+            "away": "Wolfsberger AC",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:00:00",
+            "status": "1 ",
+            "home": "Eintracht Braunschweig",
+            "score": " - ",
+            "away": "1. FC Magdeburg",
+            "ht": " - "
+        },
+        {
+            "contest": "URU RL",
+            "time": "20:00:00",
+            "status": "1",
+            "home": "Cerro Montevideo Reserve",
+            "score": " - ",
+            "away": "Atletico Fenix Reserve",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:30:00",
+            "status": "1 ",
+            "home": "[6]Vaduz",
+            "score": " - ",
+            "away": "St. Gallen[5]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:30:00",
+            "status": "1",
+            "home": "[13]FC Ufa",
+            "score": " - ",
+            "away": "Pafos FC[11]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:30:00",
+            "status": "1 ",
+            "home": "[11]Rheindorf Altach",
+            "score": " - ",
+            "away": "FC Wacker Innsbruck Amateure[10]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "20:30:00",
+            "status": "1",
+            "home": "Mizoram Police FC",
+            "score": " - ",
+            "away": "Electric Veng",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Slovakia(U21)",
+            "score": " - ",
+            "away": "Saudi Arabia(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "SVK Cup",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "[8]FK Zeleziarne Podbrezova",
+            "score": " - ",
+            "away": "Spartak Trnava[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Desportivo Huila",
+            "score": " - ",
+            "away": "Interclube Luanda",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Primeiro 1 de Agosto",
+            "score": " - ",
+            "away": "Santa Rita FC",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Saurimo FC",
+            "score": " - ",
+            "away": "Casa Militar",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Sagrada Esperanca",
+            "score": " - ",
+            "away": "Progresso Sambizanga",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Onze Bravos",
+            "score": " - ",
+            "away": "Academica Lobito",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Kabuscorp do Palanca",
+            "score": " - ",
+            "away": "ASA Luanda",
+            "ht": " - "
+        },
+        {
+            "contest": "ANG D1",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Recreativo Caala",
+            "score": " - ",
+            "away": "Recreativo Libolo",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "21:00:00",
+            "status": "1 ",
+            "home": "SV Wehen Wiesbaden",
+            "score": " - ",
+            "away": "VfR Wormatia Worms",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "21:00:00",
+            "status": "1",
+            "home": "Anorthosis Famagusta FC",
+            "score": " - ",
+            "away": "PAEEK Keryneias",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "21:25:00",
+            "status": "1 ",
+            "home": "[81]United Arab Emirates",
+            "score": " - ",
+            "away": "Bolivia[59]",
+            "ht": " - "
+        },
+        {
+            "contest": "OPAF",
+            "time": "21:30:00",
+            "status": "1",
+            "home": "Cameroon(U23)",
+            "score": " - ",
+            "away": "Chad U23",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "21:30:00",
+            "status": "1 ",
+            "home": "[10]Munchen 1860",
+            "score": " - ",
+            "away": "FC Ingolstadt 04[18]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "21:30:00",
+            "status": "1",
+            "home": "[84]Oman",
+            "score": " - ",
+            "away": "Syria[74]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "Angola(U23)",
+            "score": " - ",
+            "away": "Namibia(U23)",
+            "ht": " - "
+        },
+        {
+            "contest": "ALG D1",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[7]Paradou AC",
+            "score": " - ",
+            "away": "Bordj Bou Arreridj[13]",
+            "ht": " - "
+        },
+        {
+            "contest": "ALG D2",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[10]JSM Bejaia",
+            "score": " - ",
+            "away": "ES Mostaganem[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "POR CNU23",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[11]Portimonense(U23)",
+            "score": " - ",
+            "away": "Sporting Braga(U23)[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[3]MTK Budapest FC",
+            "score": " - ",
+            "away": "Gyirmot SE[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[11]Chernomorets Odessa",
+            "score": " - ",
+            "away": "FC Sfintul Gheorghe",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "[3]NK Osijek",
+            "score": " - ",
+            "away": "Zalaegerszegi TE[2]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "22:00:00",
+            "status": "1",
+            "home": "Kwara United",
+            "score": " - ",
+            "away": "Rivers United",
+            "ht": " - "
+        },
+        {
+            "contest": "QAT CUP",
+            "time": "22:10:00",
+            "status": "1",
+            "home": "[B1]Al Rayyan",
+            "score": " - ",
+            "away": "Al Shahaniya[B6]",
+            "ht": " - "
+        },
+        {
+            "contest": "QAT CUP",
+            "time": "22:10:00",
+            "status": "1",
+            "home": "Al Khor SC",
+            "score": " - ",
+            "away": "Al-Ahli Doha",
+            "ht": " - "
+        },
+        {
+            "contest": "UAE D1",
+            "time": "22:15:00",
+            "status": "1",
+            "home": "Al-Thaid",
+            "score": " - ",
+            "away": "Dubba Al Husun",
+            "ht": " - "
+        },
+        {
+            "contest": "BHR D2",
+            "time": "22:15:00",
+            "status": "1",
+            "home": "[3]Al-Ahli(BHR)",
+            "score": " - ",
+            "away": "Qalali[9]",
+            "ht": " - "
+        },
+        {
+            "contest": "BHR D2",
+            "time": "22:15:00",
+            "status": "1",
+            "home": "[2]Busaiteen",
+            "score": " - ",
+            "away": "Isa Town[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "OPAF",
+            "time": "22:30:00",
+            "status": "1",
+            "home": "Ghana(U23)",
+            "score": " - ",
+            "away": "Togo U23",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "22:30:00",
+            "status": "1",
+            "home": "[8]Inter Zapresic",
+            "score": " - ",
+            "away": "NK Krsko[10]",
+            "ht": " - "
+        },
+        {
+            "contest": "CAF NC",
+            "time": "22:59:00",
+            "status": "1",
+            "home": "[J2]Egypt",
+            "score": " - ",
+            "away": "Tunisia[J1]",
+            "ht": " - "
+        },
+        {
+            "contest": "OPAF",
+            "time": "22:59:00",
+            "status": "1",
+            "home": "Mozambique(U23)",
+            "score": " - ",
+            "away": "Eswatini(U23)",
+            "ht": " - "
+        },
+        {
+            "contest": "CZEC",
+            "time": "22:59:00",
+            "status": "1",
+            "home": "[16]Dukla Praha",
+            "score": " - ",
+            "away": "Teplice[10]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA U21Q",
+            "time": "22:59:00",
+            "status": "1",
+            "home": "[A2]Greece(U21)",
+            "score": " - ",
+            "away": "Austria(U21)[G2]",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "22:59:00",
+            "status": "1",
+            "home": "Pumas UNAM II",
+            "score": " - ",
+            "away": "Inter Playa del carmen",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "23:30:00",
+            "status": "1",
+            "home": "[72]Saudi Arabia",
+            "score": " - ",
+            "away": "Yemen[131]",
+            "ht": " - "
+        },
+        {
+            "contest": "SEN D1",
+            "time": "23:30:00",
+            "status": "1",
+            "home": "Sonacos de Diourbel",
+            "score": " - ",
+            "away": "Dakar Sacre Coeur",
+            "ht": " - "
+        },
+        {
+            "contest": "FRAC",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[14]Valenciennes US",
+            "score": " - ",
+            "away": "Dunkerque[17]",
+            "ht": " - "
+        },
+        {
+            "contest": "FRAC",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[D7]Iris Club de Croix",
+            "score": " - ",
+            "away": "Paris FC[10]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "Portugal(U20)",
+            "score": " - ",
+            "away": "Slovakia(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "ALG D1",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[4]ES Setif",
+            "score": " - ",
+            "away": "NA Hussein Dey[8]",
+            "ht": " - "
+        },
+        {
+            "contest": "WCWU17",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[B3]Japan Women s(U17)(N)",
+            "score": " - ",
+            "away": "South Africa Women s(U17)[B4]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA U21Q",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[C2]Poland(U21)",
+            "score": " - ",
+            "away": "Portugal(U21)[H2]",
+            "ht": " - "
+        },
+        {
+            "contest": "SEN D1",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "Linguere",
+            "score": " - ",
+            "away": "ASEC Ndiambour",
+            "ht": " - "
+        },
+        {
+            "contest": "SEN D1",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "Union Sportive Goree",
+            "score": " - ",
+            "away": "Generation Foot",
+            "ht": " - "
+        },
+        {
+            "contest": "SEN D1",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "Stade de Mbour",
+            "score": " - ",
+            "away": "NGB ASC Niarry Tally",
+            "ht": " - "
+        },
+        {
+            "contest": "SEN D1",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "Pikine",
+            "score": " - ",
+            "away": "Casa Sports Zinguinchor",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[1]AEL Limassol",
+            "score": " - ",
+            "away": "Caramba/Dinamo Riga",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "00:00:00",
+            "status": "1",
+            "home": "[15]Sportfreunde Lotte",
+            "score": " - ",
+            "away": "Borussia Dortmund[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "00:30:00",
+            "status": "1",
+            "home": "Bolivia(U20)",
+            "score": " - ",
+            "away": "Peru(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "CZEC",
+            "time": "00:30:00",
+            "status": "1",
+            "home": "[1]Slavia Praha",
+            "score": " - ",
+            "away": "Chrudim[14]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER D5",
+            "time": "00:30:00",
+            "status": "1",
+            "home": "SV Seligenporten",
+            "score": " - ",
+            "away": "SpVgg Ansbach",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "00:30:00",
+            "status": "1",
+            "home": "[2]DAC Dunajska Streda",
+            "score": " - ",
+            "away": "Sepsi[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "00:30:00",
+            "status": "1",
+            "home": "Bolivia(U20)(N)",
+            "score": " - ",
+            "away": "Peru(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "Albania(U21)",
+            "score": " - ",
+            "away": "Malta(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[12]St.Polten Amateure",
+            "score": " - ",
+            "away": "SV Schwechat[16]",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[9]SV Mattersburg Amateure",
+            "score": " - ",
+            "away": "SV Leobendorf[3]",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[14]Trenkwalder Admira Amateure",
+            "score": " - ",
+            "away": "Team Wiener Linien[13]",
+            "ht": " - "
+        },
+        {
+            "contest": "OPAF",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "Burkina Faso(U23)",
+            "score": " - ",
+            "away": "Niger(U23)",
+            "ht": " - "
+        },
+        {
+            "contest": "GER RegN",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[12]Germania Egestorf Langreder",
+            "score": " - ",
+            "away": "Havelse[15]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER RegN",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[16]BSV Rehden",
+            "score": " - ",
+            "away": "Hamburger SV II[13]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER RegW",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "[12]SC Verl",
+            "score": " - ",
+            "away": "SC Wiedenbruck[14]",
+            "ht": " - "
+        },
+        {
+            "contest": "URU RL",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "Boston River Reserve",
+            "score": " - ",
+            "away": "CA River Plate Reserve",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "SpVgg Neu Isenburg",
+            "score": " - ",
+            "away": "Hessen Dreieich[16]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER D5",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "Eilenburg",
+            "score": " - ",
+            "away": "VFC Plauen",
+            "ht": " - "
+        },
+        {
+            "contest": "GER D5",
+            "time": "01:00:00",
+            "status": "1",
+            "home": "Concordia Schonkirchen",
+            "score": " - ",
+            "away": "Buchholz",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[2]ASK Ebreichsdorf",
+            "score": " - ",
+            "away": "SC Mannsdorf[4]",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[7]Wiener Sportklub",
+            "score": " - ",
+            "away": "ASV Bruck[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS D3E",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[1]Mauerwerk",
+            "score": " - ",
+            "away": "FCM Traiskirchen[8]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER RegW",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[6]TSV Alemannia Aachen",
+            "score": " - ",
+            "away": "Viktoria Koln[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "HOL WD1",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[3]ADO Den Haag Women s",
+            "score": " - ",
+            "away": "FC Zwolle Women s[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "HOL WD1",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[9]RKSV Achilles 29 Women s",
+            "score": " - ",
+            "away": "FC Twente Enschede Women s[4]",
+            "ht": " - "
+        },
+        {
+            "contest": "HOL WD1",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[8]Excelsior Barendrecht Women s",
+            "score": " - ",
+            "away": "SC Heerenveen Women s[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "HOL WD1",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "[1]PSV Eindhoven Women s",
+            "score": " - ",
+            "away": "Ajax Amsterdam Women s[2]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "Goias Youth",
+            "score": " - ",
+            "away": "Atletico GO Youth",
+            "ht": " - "
+        },
+        {
+            "contest": "GER D5",
+            "time": "01:30:00",
+            "status": "1",
+            "home": "SC Victoria Hamburg",
+            "score": " - ",
+            "away": "HEBC Hamburg",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "01:45:00",
+            "status": "1",
+            "home": "[207]British Virgin Islands",
+            "score": " - ",
+            "away": "Bonaire",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "01:45:00",
+            "status": "1",
+            "home": "[207]British Virgin Islands(N)",
+            "score": " - ",
+            "away": "Bonaire",
+            "ht": " - "
+        },
+        {
+            "contest": "FRAC",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "Golden Lion",
+            "score": " - ",
+            "away": "Epinal[D8]",
+            "ht": " - "
+        },
+        {
+            "contest": "CAF NC",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[B2]Morocco",
+            "score": " - ",
+            "away": "Cameroon[B1]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "Germany(U21)",
+            "score": " - ",
+            "away": "Netherlands(U21)",
+            "ht": " - "
+        },
+        {
+            "contest": "BEL WPL",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[4]Standard Liege Women s",
+            "score": " - ",
+            "away": "Anderlecht Women s[2]",
+            "ht": " - "
+        },
+        {
+            "contest": "BEL WPL",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[3]Genk Women s",
+            "score": " - ",
+            "away": "KAA Gent Ladies[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "WCWU17",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[A3]Finland Women s(U17)(N)",
+            "score": " - ",
+            "away": "Ghana women s(U17)[A1]",
+            "ht": " - "
+        },
+        {
+            "contest": "SPA FDH",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[2]Palma Futsal",
+            "score": " - ",
+            "away": "Naturpellet Segovia Futsal[16]",
+            "ht": " - "
+        },
+        {
+            "contest": "ENG U23D2",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "[13]Sheffield Wed(U23)",
+            "score": " - ",
+            "away": "Barnsley(U23)[19]",
+            "ht": " - "
+        },
+        {
+            "contest": "GER D5",
+            "time": "02:00:00",
+            "status": "1",
+            "home": "Brunninghausen",
+            "score": " - ",
+            "away": "SV Schermbeck",
+            "ht": " - "
+        },
+        {
+            "contest": "FRAC",
+            "time": "02:30:00",
+            "status": "1",
+            "home": "USR Sainte-Rose",
+            "score": " - ",
+            "away": "FC Cote Bleue",
+            "ht": " - "
+        },
+        {
+            "contest": "BEL D2",
+            "time": "02:30:00",
+            "status": "1",
+            "home": "[6]Oud Heverlee Leuven",
+            "score": " - ",
+            "away": "St. Gilloise[2]",
+            "ht": " - "
+        },
+        {
+            "contest": "SPA FDH",
+            "time": "02:30:00",
+            "status": "1",
+            "home": "[9]CA Osasuna Magna Futsal",
+            "score": " - ",
+            "away": "Vina Albali Valdepenas Futsal[15]",
+            "ht": " - "
+        },
+        {
+            "contest": "URU RL",
+            "time": "02:30:00",
+            "status": "1",
+            "home": "Racing Club Montevideo Reserve",
+            "score": " - ",
+            "away": "CA Torque Reserve",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "02:30:00",
+            "status": "1",
+            "home": "Cobh Wanderers",
+            "score": " - ",
+            "away": "Avondale United",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[A-A2]Netherlands",
+            "score": " - ",
+            "away": "France[A-A1]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[B-A3]Slovakia",
+            "score": " - ",
+            "away": "Ukraine[B-A1]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[B-D1]Wales",
+            "score": " - ",
+            "away": "Denmark[B-D2]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[C-C3]Cyprus",
+            "score": " - ",
+            "away": "Bulgaria[C-C2]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[C-C4]Slovenia",
+            "score": " - ",
+            "away": "Norway[C-C1]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[D-D3]Gibraltar",
+            "score": " - ",
+            "away": "Armenia[D-D2]",
+            "ht": " - "
+        },
+        {
+            "contest": "UEFA NL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[D-D4]Liechtenstein",
+            "score": " - ",
+            "away": "FYR Macedonia[D-D1]",
+            "ht": " - "
+        },
+        {
+            "contest": "SCOLL",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "East Stirlingshire",
+            "score": " - ",
+            "away": "Edinburgh University FC",
+            "ht": " - "
+        },
+        {
+            "contest": "SCO BC",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[6]Queen s Park",
+            "score": " - ",
+            "away": "Connah s Quay Nomads FC[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "SPA FDH",
+            "time": "02:45:00",
+            "status": "1",
+            "home": "[8]Industrias Santa Coloma Futsal",
+            "score": " - ",
+            "away": "Aspil Vidal Ribera Navarra Futsal[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "SPA D2",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "[6]Las Palmas",
+            "score": " - ",
+            "away": "Granada CF[1]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "[3]Brazil(N)",
+            "score": " - ",
+            "away": "Uruguay[6]",
+            "ht": " - "
+        },
+        {
+            "contest": "WCWU17",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "[B2]Mexico Women s(U17)(N)",
+            "score": " - ",
+            "away": "Brazil Women s(U17)[B1]",
+            "ht": " - "
+        },
+        {
+            "contest": "ARG D2M3",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "[10]CA Lugano",
+            "score": " - ",
+            "away": "Deportivo Muniz[7]",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "Cherry Orchard",
+            "score": " - ",
+            "away": "Bangor Celtic",
+            "ht": " - "
+        },
+        {
+            "contest": "INT CF",
+            "time": "03:00:00",
+            "status": "1",
+            "home": "St. Mochtas",
+            "score": " - ",
+            "away": "Crumlin United FC",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "03:30:00",
+            "status": "1",
+            "home": "Venezuela(U20)",
+            "score": " - ",
+            "away": "Ecuador(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "04:00:00",
+            "status": "1",
+            "home": "Chimalhuacan",
+            "score": " - ",
+            "away": "Sahuayo FC",
+            "ht": " - "
+        },
+        {
+            "contest": "WCWU17",
+            "time": "05:00:00",
+            "status": "1",
+            "home": "[A4]Uruguay Women s(U17)",
+            "score": " - ",
+            "away": "New Zealand Women s(U17)[A2]",
+            "ht": " - "
+        },
+        {
+            "contest": "CONCACAF U20",
+            "time": "05:15:00",
+            "status": "1",
+            "home": "Mexico(U20)(N)",
+            "score": " - ",
+            "away": "El Salvador(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "BRA D2",
+            "time": "05:30:00",
+            "status": "1",
+            "home": "[8]Atletico Clube Goianiense",
+            "score": " - ",
+            "away": "Sao Bento[11]",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "06:00:00",
+            "status": "1",
+            "home": "[172]Grenada",
+            "score": " - ",
+            "away": "French Saint-Martin",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS YTH",
+            "time": "06:30:00",
+            "status": "1",
+            "home": "Melbourne Victory FC Am",
+            "score": " - ",
+            "away": "Perth Glory FC Am",
+            "ht": " - "
+        },
+        {
+            "contest": "AUS YTH",
+            "time": "06:30:00",
+            "status": "1",
+            "home": "Central Coast Mariners FC Am",
+            "score": " - ",
+            "away": "Newcastle Jets FC Youth",
+            "ht": " - "
+        },
+        {
+            "contest": "BRA D2",
+            "time": "06:30:00",
+            "status": "1",
+            "home": "[6]Londrina (PR)",
+            "score": " - ",
+            "away": "CRB (AL)[17]",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "07:00:00",
+            "status": "1",
+            "home": "[12]Argentina",
+            "score": " - ",
+            "away": "Mexico[16]",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "07:00:00",
+            "status": "1",
+            "home": "[180]Bermuda",
+            "score": " - ",
+            "away": "El Salvador[70]",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "07:00:00",
+            "status": "1",
+            "home": "Ocelotes UNACH",
+            "score": " - ",
+            "away": "CSyD Dorados de Sinaloa B",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "07:00:00",
+            "status": "1",
+            "home": "Estudiantes Tecos",
+            "score": " - ",
+            "away": "CD Alacranes de Durango",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "07:15:00",
+            "status": "1",
+            "home": "[13]Chile",
+            "score": " - ",
+            "away": "Costa Rica[37]",
+            "ht": " - "
+        },
+        {
+            "contest": "CONCACAF U20",
+            "time": "07:30:00",
+            "status": "1",
+            "home": "USA(U20)",
+            "score": " - ",
+            "away": "Costa Rica(U20)",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "08:00:00",
+            "status": "1",
+            "home": "[185]Aruba",
+            "score": " - ",
+            "away": "Montserrat[202]",
+            "ht": " - "
+        },
+        {
+            "contest": "ECU D2",
+            "time": "08:00:00",
+            "status": "1",
+            "home": "L.D.U.Portoviejo",
+            "score": " - ",
+            "away": "Liga de Loja",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "08:00:00",
+            "status": "1",
+            "home": "[185]Aruba(N)",
+            "score": " - ",
+            "away": "Montserrat[202]",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "08:30:00",
+            "status": "1",
+            "home": "UA Chihuahua",
+            "score": " - ",
+            "away": "Correcaminos UAT B",
+            "ht": " - "
+        },
+        {
+            "contest": "INTERF",
+            "time": "09:00:00",
+            "status": "1",
+            "home": "[62]Honduras",
+            "score": " - ",
+            "away": "Panama[70]",
+            "ht": " - "
+        },
+        {
+            "contest": "GUA D1",
+            "time": "09:00:00",
+            "status": "1",
+            "home": "[11]Deportivo Petapa",
+            "score": " - ",
+            "away": "Club Comunicaciones[4]",
+            "ht": " - "
+        },
+        {
+            "contest": "CON  NL",
+            "time": "09:00:00",
+            "status": "1",
+            "home": "[164]Belize",
+            "score": " - ",
+            "away": "Puerto Rico[175]",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "10:00:00",
+            "status": "1",
+            "home": "Murcielagos",
+            "score": " - ",
+            "away": "Tepatitlan De Morelos",
+            "ht": " - "
+        },
+        {
+            "contest": "MEX D3",
+            "time": "10:00:00",
+            "status": "1",
+            "home": "Coras De Nayarit",
+            "score": " - ",
+            "away": "Gavilanes Matamoros",
+            "ht": " - "
+        }
+    ]
+}
