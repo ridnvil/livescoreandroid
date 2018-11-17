@@ -231,9 +231,8 @@ class _LigaMatchState extends State<LigaMatch> {
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
-      datalist = data[0]["data"];
+      //datalist = data[0]["data"];
     });
-    print(data[0]["data"]);
     //return data["data"];
   }
 
