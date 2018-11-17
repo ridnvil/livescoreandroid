@@ -5,13 +5,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class HomeLayout extends StatefulWidget {
+class ResultLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
   @override
-  _HomeLayoutState createState() => _HomeLayoutState();
+  _ResultLayoutState createState() => _ResultLayoutState();
 }
 
-class _HomeLayoutState extends State<HomeLayout> {
+class _ResultLayoutState extends State<ResultLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +33,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               children: <Widget>[
                 new Container(
                   child: AppBar(
-                    title: Center(child: new Text('Live Score')),
+                    title: Center(child: new Text('Result Match')),
                     actions: <Widget>[
                       new IconButton(
                         icon: Icon(Icons.info_outline),
@@ -54,7 +54,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                 new Container(
                   height: 500.0,
                   padding: EdgeInsets.all(10.0),
-                  child: LiveMatch(),
+                  child: ResultMatch(),
                 ),
               ],
             ),
