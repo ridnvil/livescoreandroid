@@ -45,7 +45,19 @@ class _HomeLayoutState extends State<HomeLayout> {
                       new IconButton(
                         icon: Icon(Icons.info_outline),
                         onPressed: () {
-                          print('search leading');
+                          showDialog(
+                            context: context,
+                            child: AlertDialog(
+                              title: new Text('About Crawling Team'),
+                              content: Column(
+                                children: <Widget>[
+                                  new Text('Dezza'),
+                                  new Text('Exan'),
+                                  new Text('Ridwan'),
+                                ],
+                              ),
+                            ),
+                          );
                         },
                       )
                     ],
