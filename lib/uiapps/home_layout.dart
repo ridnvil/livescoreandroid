@@ -7,6 +7,8 @@ import 'package:http/http.dart' as http;
 
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
+
+  const HomeLayout({Key key}):super(key: key);
   @override
   _HomeLayoutState createState() => _HomeLayoutState();
 }
