@@ -18,7 +18,7 @@ class LiveMatch extends StatefulWidget {
 
 class _LiveMatchState extends State<LiveMatch> {
   final String url =
-      "http://192.168.2.111/azsolusindo/public/api/matchSchedule?Post_Param_Data=0";
+      "http://azsolusindo.com:8081/azsolusindo/public/api/matchLive";
 
   Timer time;
   Map status;
@@ -122,7 +122,7 @@ class AllMatch extends StatefulWidget {
 
 class _AllMatchState extends State<AllMatch> {
   final String url =
-      "http://192.168.2.111/azsolusindo/public/api/matchWithResult";
+      "http://azsolusindo.com:8081/azsolusindo/public/api/matchWithResult";
 
   Timer time;
   Map status;
@@ -225,7 +225,7 @@ class ResultMatch extends StatefulWidget {
 }
 
 class _ResultMatchState extends State<ResultMatch> {
-  final String url = "http://192.168.2.111/azsolusindo/public/api/matchResult";
+  final String url = "http://azsolusindo.com:8081/azsolusindo/public/api/matchResult";
   Timer time;
   Map status;
   Map message;
@@ -328,7 +328,7 @@ class LigaMatch extends StatefulWidget {
 
 class _LigaMatchState extends State<LigaMatch> {
   final String url =
-      "http://192.168.2.111/phprest/api/match/matchLivePerLig.php";
+      "http://azsolusindo.com:8081/phprest/api/match/matchLivePerLig.php";
 
   Map status;
   Map message;
@@ -497,6 +497,62 @@ class _DrawerCompState extends State<DrawerComp> {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class DataView extends StatefulWidget {
+  @override
+  _DataViewState createState() => _DataViewState();
+}
+
+class _DataViewState extends State<DataView> {
+  final String url =
+      "http://azsolusindo.com:8081/azsolusindo/public/api/matchSchedule?Post_Param_Data=0";
+
+  Timer time;
+  Map status;
+  Map message;
+  Map num_row;
+  Map data;
+  List datalist;
+
+  Future loadData() async {
+    http.Response response = await http.get(url);
+    data = json.decode(response.body);
+    setState(() {
+      datalist = data["data"];
+    });
+  }
+
+  @override
+    void initState() {
+      super.initState();
+      loadData();
+    }
+
+
+  @override
+  Widget build(BuildContext context) {
+    loadData();
+    return FlatButton(
+      child: Container(
+        child: Card(
+          color: Colors.transparent,
+          child: new Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Text('Data Crawl', style: TextStyle(color: Colors.white),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Text('${datalist.length}', style: TextStyle(color: Colors.white),),
+              )
+            ],
+          )
+        ),
       ),
     );
   }

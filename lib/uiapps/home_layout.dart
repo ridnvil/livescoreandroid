@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
 
-  const HomeLayout({Key key}):super(key: key);
+  const HomeLayout({Key key}) : super(key: key);
   @override
   _HomeLayoutState createState() => _HomeLayoutState();
 }
@@ -27,6 +27,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         ),
       ),
       body: Container(
+        height: MediaQuery.of(context).size.height,
         child: new Stack(
           fit: StackFit.expand,
           children: <Widget>[
@@ -55,7 +56,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                                   children: <Widget>[
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: new Text('== Crawling Team A2Z Solusindo =='),
+                                      child: new Text(
+                                          '== Crawling Team A2Z Solusindo =='),
                                     ),
                                     new Text('Dezza'),
                                     new Text('Exan'),
@@ -70,7 +72,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                               actions: <Widget>[
                                 FlatButton(
                                   child: new Text('Close'),
-                                  onPressed: (){
+                                  onPressed: () {
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -88,10 +90,10 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                 ),
                 new Container(
-                    height: 600.0,
-                    padding: EdgeInsets.all(10.0),
-                    child: LiveMatch(),
-                  ),
+                  height: 631.0,
+                  padding: EdgeInsets.all(10.0),
+                  child: LiveMatch(),
+                ),
               ],
             ),
           ],

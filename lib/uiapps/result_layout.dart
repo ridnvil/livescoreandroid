@@ -73,7 +73,7 @@ class _ResultLayoutState extends State<ResultLayout> {
                   ),
                 ),
                 new Container(
-                  height: 600.0,
+                  height: 631.0,
                   padding: EdgeInsets.all(10.0),
                   child: ResultMatch(),
                 ),

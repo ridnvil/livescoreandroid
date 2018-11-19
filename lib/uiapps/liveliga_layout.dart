@@ -73,7 +73,7 @@ class _LigaLayoutState extends State<LigaLayout> {
                   ),
                 ),
                 new Container(
-                  height: 600.0,
+                  height: 631.0,
                   padding: EdgeInsets.all(10.0),
                   child: LigaMatch(),
                 ),
