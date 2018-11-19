@@ -12,9 +12,11 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
+  GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _drawer,
       drawer: Opacity(
         opacity: 0.9,
         child: DrawerComp(),

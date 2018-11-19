@@ -28,11 +28,14 @@ class _LiveMatchState extends State<LiveMatch> {
 
   Future<List> getDataLive() async {
     http.Response response = await http.get(url);
-    data = json.decode(response.body);
-    setState(() {
-      datalist = data["data"];
-    });
-    return data["data"];
+    if (response.persistentConnection == true) {
+      data = json.decode(response.body);
+      setState(() {
+        datalist = data["data"];
+      });
+    } else {
+      print('Connection Error');
+    }
   }
 
   @override
@@ -238,7 +241,6 @@ class _LigaMatchState extends State<LigaMatch> {
     setState(() {
       liga = data["data"];
       listname = liga.keys;
-      match = listname;
     });
     print(listname.toString());
     //return data["data"];
@@ -287,21 +289,46 @@ class _DrawerCompState extends State<DrawerComp> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              GestureDetector(
-                child: new Text('Live Match',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.white)),
-                onTap: () {
+              FlatButton(
+                padding: EdgeInsets.only(right: 0.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                      top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Icon(Icons.play_circle_outline,
+                            color: Colors.red),
+                      ),
+                      new Text('Live Match',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                ),
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
               ),
               Divider(
                 color: Colors.white,
               ),
-              GestureDetector(
-                child:
-                    new Text('Result', style: TextStyle(color: Colors.white)),
-                onTap: () {
+              FlatButton(
+                padding: EdgeInsets.only(right: 0.0),
+                child: Container(
+                    padding: EdgeInsets.only(
+                        top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
+                    child: Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Icon(Icons.menu, color: Colors.white),
+                        ),
+                        new Text('Result',
+                            style: TextStyle(color: Colors.white)),
+                      ],
+                    )),
+                onPressed: () {
                   Navigator.of(context).pop();
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ResultLayout()));
@@ -310,10 +337,23 @@ class _DrawerCompState extends State<DrawerComp> {
               Divider(
                 color: Colors.white,
               ),
-              GestureDetector(
-                child: new Text('Live Liga',
-                    style: TextStyle(color: Colors.white)),
-                onTap: () {
+              FlatButton(
+                padding: EdgeInsets.only(right: 0.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                      top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Icon(Icons.play_circle_filled, color: Colors.white),
+                      ),
+                      new Text('Live Liga',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                ),
+                onPressed: () {
                   Navigator.of(context).pop();
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LigaLayout()));
