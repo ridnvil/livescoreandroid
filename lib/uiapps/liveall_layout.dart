@@ -5,12 +5,15 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class LigaLayout extends StatefulWidget {
+class AllMatchLayout extends StatefulWidget {
+  static final String tag = "/MAIN_LAYOUT";
+
+  const AllMatchLayout({Key key}):super(key: key);
   @override
-  _LigaLayoutState createState() => _LigaLayoutState();
+  _AllMatchLayoutState createState() => _AllMatchLayoutState();
 }
 
-class _LigaLayoutState extends State<LigaLayout> {
+class _AllMatchLayoutState extends State<AllMatchLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +31,7 @@ class _LigaLayoutState extends State<LigaLayout> {
               children: <Widget>[
                 new Container(
                   child: AppBar(
-                    title: Center(child: new Text('Live Liga')),
+                    title: Center(child: new Text('All Match')),
                     actions: <Widget>[
                       new IconButton(
                         icon: Icon(Icons.info_outline),
@@ -43,8 +46,7 @@ class _LigaLayoutState extends State<LigaLayout> {
                                   children: <Widget>[
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: new Text(
-                                          '== Crawling Team A2Z Solusindo =='),
+                                      child: new Text('== Crawling Team A2Z Solusindo =='),
                                     ),
                                     new Text('Dezza'),
                                     new Text('Exan'),
@@ -59,7 +61,7 @@ class _LigaLayoutState extends State<LigaLayout> {
                               actions: <Widget>[
                                 FlatButton(
                                   child: new Text('Close'),
-                                  onPressed: () {
+                                  onPressed: (){
                                     Navigator.pop(context);
                                   },
                                 ),
@@ -73,10 +75,10 @@ class _LigaLayoutState extends State<LigaLayout> {
                   ),
                 ),
                 new Container(
-                  height: 600.0,
-                  padding: EdgeInsets.all(10.0),
-                  child: LigaMatch(),
-                ),
+                    height: 600.0,
+                    padding: EdgeInsets.all(10.0),
+                    child: AllMatch(),
+                  ),
               ],
             ),
           ],

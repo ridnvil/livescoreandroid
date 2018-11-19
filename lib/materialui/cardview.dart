@@ -114,6 +114,110 @@ class _LiveMatchState extends State<LiveMatch> {
   }
 }
 
+class AllMatch extends StatefulWidget {
+  @override
+  _AllMatchState createState() => _AllMatchState();
+}
+
+class _AllMatchState extends State<AllMatch> {
+  final String url =
+      "http://192.168.2.111/azsolusindo/public/api/matchWithResult";
+
+  Timer time;
+  Map status;
+  Map message;
+  Map num_row;
+  Map data;
+  List datalist;
+
+  Future<List> getAllMatch() async {
+    http.Response response = await http.get(url);
+    if (response.persistentConnection == true) {
+      data = json.decode(response.body);
+      setState(() {
+        datalist = data["data"];
+      });
+    } else {
+      print('Connection Error');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    //getAllMatch();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    getAllMatch();
+    return Container(
+      child: RefreshIndicator(
+        onRefresh: getAllMatch,
+        child: new ListView.builder(
+          itemCount: datalist == null ? 0 : datalist.length,
+          itemBuilder: (BuildContext context, int index) {
+            return new Card(
+              color: Colors.transparent,
+              child: Container(
+                padding: EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.all(5.0),
+                      color: Colors.white12,
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              child: Text(datalist[index]["time"],
+                                  style: TextStyle(color: Colors.white))),
+                          Text("Half Time : ${datalist[index]["ht"]}",
+                              style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.only(right: 20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              new Text(datalist[index]["contest"],
+                                  style: TextStyle(color: Colors.white)),
+                              new Text(datalist[index]["status"],
+                                  style: TextStyle(color: Colors.white))
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              new Text(datalist[index]["home"],
+                                  style: TextStyle(color: Colors.white)),
+                              new Text(datalist[index]["score"],
+                                  style: TextStyle(color: Colors.white)),
+                              new Text(datalist[index]["away"],
+                                  style: TextStyle(color: Colors.white))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
 class ResultMatch extends StatefulWidget {
   @override
   _ResultMatchState createState() => _ResultMatchState();
@@ -316,6 +420,30 @@ class _DrawerCompState extends State<DrawerComp> {
               FlatButton(
                 padding: EdgeInsets.only(right: 0.0),
                 child: Container(
+                  padding: EdgeInsets.only(
+                      top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Icon(Icons.play_circle_outline,
+                            color: Colors.red),
+                      ),
+                      new Text('All Match',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              Divider(
+                color: Colors.white,
+              ),
+              FlatButton(
+                padding: EdgeInsets.only(right: 0.0),
+                child: Container(
                     padding: EdgeInsets.only(
                         top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
                     child: Row(
@@ -346,7 +474,8 @@ class _DrawerCompState extends State<DrawerComp> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: new Icon(Icons.play_circle_filled, color: Colors.white),
+                        child: new Icon(Icons.play_circle_filled,
+                            color: Colors.white),
                       ),
                       new Text('Live Liga',
                           style: TextStyle(color: Colors.white)),

@@ -48,14 +48,33 @@ class _HomeLayoutState extends State<HomeLayout> {
                           showDialog(
                             context: context,
                             child: AlertDialog(
-                              title: new Text('About Crawling Team'),
-                              content: Column(
-                                children: <Widget>[
-                                  new Text('Dezza'),
-                                  new Text('Exan'),
-                                  new Text('Ridwan'),
-                                ],
+                              title: new Text('About Us'),
+                              content: Container(
+                                height: 200.0,
+                                child: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: new Text('== Crawling Team A2Z Solusindo =='),
+                                    ),
+                                    new Text('Dezza'),
+                                    new Text('Exan'),
+                                    new Text('Ridwan'),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: new Text('== Peace =='),
+                                    ),
+                                  ],
+                                ),
                               ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: new Text('Close'),
+                                  onPressed: (){
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ],
                             ),
                           );
                         },
@@ -64,9 +83,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                     backgroundColor: Colors.transparent,
                     leading: IconButton(
                       icon: Icon(Icons.sort),
-                      onPressed: () {
-                        print('Icon Leading');
-                      },
+                      onPressed: () => _drawer.currentState.openDrawer(),
                     ),
                   ),
                 ),
