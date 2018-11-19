@@ -6,7 +6,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ResultLayout extends StatefulWidget {
-  static final String tag = "/MAIN_LAYOUT";
   @override
   _ResultLayoutState createState() => _ResultLayoutState();
 }
@@ -15,10 +14,6 @@ class _ResultLayoutState extends State<ResultLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Opacity(
-        opacity: 0.9,
-        child: DrawerComp(),
-      ),
       body: Container(
         child: new Stack(
           fit: StackFit.expand,
@@ -43,16 +38,10 @@ class _ResultLayoutState extends State<ResultLayout> {
                       )
                     ],
                     backgroundColor: Colors.transparent,
-                    leading: IconButton(
-                      icon: Icon(Icons.sort),
-                      onPressed: () {
-                        print('Icon Leading');
-                      },
-                    ),
                   ),
                 ),
                 new Container(
-                  height: 500.0,
+                  height: 600.0,
                   padding: EdgeInsets.all(10.0),
                   child: ResultMatch(),
                 ),

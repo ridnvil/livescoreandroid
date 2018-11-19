@@ -16,15 +16,15 @@ class LiveMatch extends StatefulWidget {
 }
 
 class _LiveMatchState extends State<LiveMatch> {
-  final String url = "http://192.168.2.111/phprest/api/match/matchLive.php";
-  StreamController streamController = StreamController();
+  final String url =
+      "http://192.168.2.111/azsolusindo/public/api/matchSchedule?Post_Param_Data=0";
+
   Timer time;
   Map status;
   Map message;
   Map num_row;
   Map data;
   List datalist;
-  Stream<List> stream;
 
   Future<List> getDataLive() async {
     http.Response response = await http.get(url);
@@ -38,11 +38,12 @@ class _LiveMatchState extends State<LiveMatch> {
   @override
   void initState() {
     super.initState();
-    getDataLive();
+    //getDataLive();
   }
 
   @override
   Widget build(BuildContext context) {
+    getDataLive();
     return Container(
       child: RefreshIndicator(
         onRefresh: getDataLive,
@@ -116,23 +117,24 @@ class ResultMatch extends StatefulWidget {
 }
 
 class _ResultMatchState extends State<ResultMatch> {
-  final String url = "http://192.168.2.111/phprest/api/match/matchResult.php";
-  StreamController streamController = StreamController();
+  final String url = "http://192.168.2.111/azsolusindo/public/api/matchResult";
   Timer time;
   Map status;
   Map message;
   Map num_row;
   Map data;
   List datalist;
-  Stream<List> stream;
 
   Future<List> getDataResult() async {
     http.Response response = await http.get(url);
-    data = json.decode(response.body);
-    setState(() {
-      datalist = data["data"];
-    });
-    return data["data"];
+    if (response.persistentConnection == true) {
+      data = json.decode(response.body);
+      setState(() {
+        datalist = data["data"];
+      });
+    } else {
+      print('Connection Error');
+    }
   }
 
   @override
@@ -143,6 +145,7 @@ class _ResultMatchState extends State<ResultMatch> {
 
   @override
   Widget build(BuildContext context) {
+    getDataResult();
     return Container(
       child: RefreshIndicator(
         onRefresh: getDataResult,
@@ -216,23 +219,28 @@ class LigaMatch extends StatefulWidget {
 }
 
 class _LigaMatchState extends State<LigaMatch> {
-  final String url = "http://192.168.2.111/phprest/api/match/matchLivePerLig.php";
-  StreamController streamController = StreamController();
-  Timer time;
+  final String url =
+      "http://192.168.2.111/phprest/api/match/matchLivePerLig.php";
+
   Map status;
   Map message;
   Map num_row;
   Map data;
-  List datalist;
-  List dataliga;
-  Stream<List> stream;
+  Map liga;
+  List<String> match;
+  String dataliga;
+  String ligname;
+  var listname;
 
   Future<List> getDataLiveLiga() async {
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
-      //datalist = data[0]["data"];
+      liga = data["data"];
+      listname = liga.keys;
+      match = listname;
     });
+    print(listname.toString());
     //return data["data"];
   }
 
@@ -244,9 +252,8 @@ class _LigaMatchState extends State<LigaMatch> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    getDataLiveLiga();
+    return Container(child: new Text('${listname}'));
   }
 }
 
@@ -259,6 +266,7 @@ class _DrawerCompState extends State<DrawerComp> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 200.0,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
@@ -277,22 +285,24 @@ class _DrawerCompState extends State<DrawerComp> {
             color: Colors.white,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              FlatButton(
+              GestureDetector(
                 child: new Text('Live Match',
+                    textAlign: TextAlign.left,
                     style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeLayout()));
+                onTap: () {
+                  Navigator.of(context).pop();
                 },
               ),
               Divider(
                 color: Colors.white,
               ),
-              FlatButton(
+              GestureDetector(
                 child:
                     new Text('Result', style: TextStyle(color: Colors.white)),
-                onPressed: () {
+                onTap: () {
+                  Navigator.of(context).pop();
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ResultLayout()));
                 },
@@ -300,10 +310,11 @@ class _DrawerCompState extends State<DrawerComp> {
               Divider(
                 color: Colors.white,
               ),
-              FlatButton(
+              GestureDetector(
                 child: new Text('Live Liga',
                     style: TextStyle(color: Colors.white)),
-                onPressed: () {
+                onTap: () {
+                  Navigator.of(context).pop();
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LigaLayout()));
                 },
