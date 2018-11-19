@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:livescore/uiapps/home_layout.dart';
+import 'package:livescore/uiapps/liveall_layout.dart';
 import 'package:livescore/uiapps/liveliga_layout.dart';
 import 'package:livescore/uiapps/result_layout.dart';
 
@@ -426,8 +427,8 @@ class _DrawerCompState extends State<DrawerComp> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: new Icon(Icons.play_circle_outline,
-                            color: Colors.red),
+                        child: new Icon(Icons.all_inclusive,
+                            color: Colors.white),
                       ),
                       new Text('All Match',
                           style: TextStyle(color: Colors.white)),
@@ -436,6 +437,8 @@ class _DrawerCompState extends State<DrawerComp> {
                 ),
                 onPressed: () {
                   Navigator.of(context).pop();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AllMatchLayout()));
                 },
               ),
               Divider(
