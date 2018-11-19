@@ -21,7 +21,10 @@ class _HomeLayoutState extends State<HomeLayout> {
       key: _drawer,
       drawer: Opacity(
         opacity: 0.9,
-        child: DrawerComp(),
+        child: Drawer(
+          elevation: 10.0,
+          child: DrawerComp(),
+        ),
       ),
       body: Container(
         child: new Stack(
