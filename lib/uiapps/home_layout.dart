@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:livescore/materialui/cardview.dart';
+import 'package:livescore/materialui/timezone.dart';
+import 'package:timezone/timezone.dart';
+import 'package:timezone/standalone.dart';
+import 'package:http/http.dart' as http;
 
 import 'dart:async';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
@@ -15,6 +19,10 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
+
+  List<String> list;
+  String tz = 'GMTplus9';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,11 +97,9 @@ class _HomeLayoutState extends State<HomeLayout> {
                     ),
                   ),
                 ),
-                new Container(
-                  height: 631.0,
-                  padding: EdgeInsets.all(10.0),
-                  child: LiveMatch(),
-                ),
+                Container(
+                  height: 500.0,
+                  child: LiveMatch(timezone: tz)),
               ],
             ),
           ],

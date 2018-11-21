@@ -1,26 +1,26 @@
 import 'dart:io';
-
-import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:livescore/uiapps/home_layout.dart';
 import 'package:livescore/uiapps/liveall_layout.dart';
 import 'package:livescore/uiapps/liveliga_layout.dart';
 import 'package:livescore/uiapps/result_layout.dart';
+import 'package:uri/uri.dart';
 
 class LiveMatch extends StatefulWidget {
-  LiveMatch({Key key}) : super(key: key);
+  final String timezone;
+  const LiveMatch({Key key, this.timezone}) : super(key: key);
   @override
   _LiveMatchState createState() => _LiveMatchState();
 }
 
 class _LiveMatchState extends State<LiveMatch> {
-  final String url =
-      "http://azsolusindo.com:8081/azsolusindo/public/api/matchLive";
-
-  Timer time;
+  //String timezone;
+  var time;
   Map status;
   Map message;
   Map num_row;
@@ -28,15 +28,14 @@ class _LiveMatchState extends State<LiveMatch> {
   List datalist;
 
   Future<List> getDataLive() async {
+    time = 'GMTplus7';
+    String url = "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/0";
     http.Response response = await http.get(url);
-    if (response.persistentConnection == true) {
-      data = json.decode(response.body);
-      setState(() {
-        datalist = data["data"];
-      });
-    } else {
-      print('Connection Error');
-    }
+    data = json.decode(response.body);
+    setState(() {
+      datalist = data["data"];
+    });
+    //print(time);
   }
 
   @override
@@ -67,7 +66,7 @@ class _LiveMatchState extends State<LiveMatch> {
                       child: Row(
                         children: <Widget>[
                           Expanded(
-                              child: Text(datalist[index]["time"],
+                              child: Text('${datalist[index]["time"]}',
                                   style: TextStyle(color: Colors.white))),
                           Text("Half Time : ${datalist[index]["ht"]}",
                               style: TextStyle(color: Colors.white)),
@@ -121,10 +120,8 @@ class AllMatch extends StatefulWidget {
 }
 
 class _AllMatchState extends State<AllMatch> {
-  final String url =
-      "http://azsolusindo.com:8081/azsolusindo/public/api/matchWithResult";
 
-  Timer time;
+  var time;
   Map status;
   Map message;
   Map num_row;
@@ -132,6 +129,8 @@ class _AllMatchState extends State<AllMatch> {
   List datalist;
 
   Future<List> getAllMatch() async {
+    time = 'GMTplus7';
+    String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/2";
     http.Response response = await http.get(url);
     if (response.persistentConnection == true) {
       data = json.decode(response.body);
@@ -225,8 +224,7 @@ class ResultMatch extends StatefulWidget {
 }
 
 class _ResultMatchState extends State<ResultMatch> {
-  final String url = "http://azsolusindo.com:8081/azsolusindo/public/api/matchResult";
-  Timer time;
+  var time;
   Map status;
   Map message;
   Map num_row;
@@ -234,6 +232,8 @@ class _ResultMatchState extends State<ResultMatch> {
   List datalist;
 
   Future<List> getDataResult() async {
+    time = 'GMTplus7';
+    String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/1";
     http.Response response = await http.get(url);
     if (response.persistentConnection == true) {
       data = json.decode(response.body);
@@ -553,7 +553,7 @@ class _DataViewState extends State<DataView> {
             ],
           )
         ),
-      ),
+      ), onPressed: () {},
     );
   }
 }

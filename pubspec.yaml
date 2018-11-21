@@ -17,6 +17,8 @@ dependencies:
     sdk: flutter
 
   http: ^0.12.0
+  timezone: ^0.5.1
+  uri: ^0.11.3+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -34,6 +36,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/bgls.png
+    - assets/tzdb-2018g.tar.lz
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

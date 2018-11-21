@@ -75,7 +75,7 @@ class _AllMatchLayoutState extends State<AllMatchLayout> {
                   ),
                 ),
                 new Container(
-                    height: 631.0,
+                    height: 500.0,
                     padding: EdgeInsets.all(10.0),
                     child: AllMatch(),
                   ),
