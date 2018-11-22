@@ -11,6 +11,7 @@ import 'dart:convert';
 
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
+  static String zonetime;
 
   const HomeLayout({Key key}) : super(key: key);
   @override
@@ -19,13 +20,17 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   List<String> list;
-  String timeZone;
+  String timeZone = 'GMTplus7';
   Timer time;
+  String gmt;
 
   Future<String> parseTZ() async {
     setState(() {
-      timeZone = 'GMTplus6';
+      timeZone = HomeLayout.zonetime;
+      gmt = timeZone.replaceAll(r'plus', '+');
     });
   }
 
@@ -53,7 +58,8 @@ class _HomeLayoutState extends State<HomeLayout> {
       endDrawer: Opacity(
         opacity: 0.9,
         child: Drawer(
-          child: DrawerTimeZone(),
+          elevation: 10.0,
+          child: DrawerTimeZone(locations: timeZone),
         ),
       ),
       body: new Stack(
@@ -69,7 +75,13 @@ class _HomeLayoutState extends State<HomeLayout> {
             children: <Widget>[
               new Container(
                 child: AppBar(
-                  title: Center(child: new Text('Live Score')),
+                  title: Center(child: gmt == null ? Text('Live Score : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('Live Score : ${gmt}',style: TextStyle(fontSize: 14.0))),
+                  actions: <Widget>[
+                    new IconButton(
+                      icon: Icon(Icons.av_timer),
+                      onPressed: () => _drawer.currentState.openEndDrawer(),
+                    )
+                  ],
                   backgroundColor: Colors.transparent,
                   leading: IconButton(
                     icon: Icon(Icons.sort),
@@ -77,7 +89,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                 ),
               ),
-              Container(height: 512.0, child: LiveMatch(timezone: timeZone)),
+              Container(height: 510.0, child: LiveMatch(timezone: timeZone)),
             ],
           ),
         ],
