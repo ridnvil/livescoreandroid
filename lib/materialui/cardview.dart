@@ -9,6 +9,7 @@ import 'package:livescore/uiapps/home_layout.dart';
 import 'package:livescore/uiapps/liveall_layout.dart';
 import 'package:livescore/uiapps/liveliga_layout.dart';
 import 'package:livescore/uiapps/result_layout.dart';
+import 'package:livescore/uiapps/streaming_layout.dart';
 import 'package:uri/uri.dart';
 
 class LiveMatch extends StatefulWidget {
@@ -29,7 +30,8 @@ class _LiveMatchState extends State<LiveMatch> {
 
   Future<List> getDataLive() async {
     time = 'GMTplus7';
-    String url = "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/0";
+    String url =
+        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/0";
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
@@ -53,59 +55,81 @@ class _LiveMatchState extends State<LiveMatch> {
         child: new ListView.builder(
           itemCount: datalist == null ? 0 : datalist.length,
           itemBuilder: (BuildContext context, int index) {
-            return new Card(
-              color: Colors.transparent,
-              child: Container(
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.all(5.0),
-                      color: Colors.white12,
-                      child: Row(
+            return GestureDetector(
+              child: new Card(
+                color: Colors.transparent,
+                child: Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(5.0),
+                        color: Colors.white12,
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                                child: Text('${datalist[index]["time"]}',
+                                    style: TextStyle(color: Colors.white))),
+                            Expanded(
+                              child: Text("LIVE",
+                                  style: TextStyle(
+                                      color: Colors.red, fontSize: 12.0)),
+                            ),
+                            Text("Half Time : ${datalist[index]["ht"]}",
+                                style: TextStyle(color: Colors.white)),
+                          ],
+                        ),
+                      ),
+                      Row(
                         children: <Widget>[
-                          Expanded(
-                              child: Text('${datalist[index]["time"]}',
-                                  style: TextStyle(color: Colors.white))),
-                          Text("Half Time : ${datalist[index]["ht"]}",
-                              style: TextStyle(color: Colors.white)),
+                          Container(
+                            padding: EdgeInsets.only(right: 20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                new Text(datalist[index]["contest"],
+                                    style: TextStyle(color: Colors.white)),
+                                Text(datalist[index]["status"],
+                                    style: TextStyle(color: Colors.white))
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                new Text(datalist[index]["home"],
+                                    style: TextStyle(color: Colors.white)),
+                                new Text(datalist[index]["score"],
+                                    style: TextStyle(color: Colors.white)),
+                                new Text(datalist[index]["away"],
+                                    style: TextStyle(color: Colors.white))
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.only(right: 20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              new Text(datalist[index]["contest"],
-                                  style: TextStyle(color: Colors.white)),
-                              new Text(datalist[index]["status"],
-                                  style: TextStyle(color: Colors.white))
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              new Text(datalist[index]["home"],
-                                  style: TextStyle(color: Colors.white)),
-                              new Text(datalist[index]["score"],
-                                  style: TextStyle(color: Colors.white)),
-                              new Text(datalist[index]["away"],
-                                  style: TextStyle(color: Colors.white))
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
+              onTap: () {
+                print(datalist[index]["contest"]);
+                //Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LiveStreaming(
+                              matchlive: datalist[index]["contest"],
+                              home: datalist[index]["home"],
+                              score: datalist[index]["score"],
+                              away: datalist[index]["away"],
+                              halftime: datalist[index]["ht"],
+                              status: datalist[index]["status"],
+                            )));
+              },
             );
           },
         ),
@@ -120,7 +144,6 @@ class AllMatch extends StatefulWidget {
 }
 
 class _AllMatchState extends State<AllMatch> {
-
   var time;
   Map status;
   Map message;
@@ -130,7 +153,8 @@ class _AllMatchState extends State<AllMatch> {
 
   Future<List> getAllMatch() async {
     time = 'GMTplus7';
-    String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/2";
+    String url =
+        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/2";
     http.Response response = await http.get(url);
     if (response.persistentConnection == true) {
       data = json.decode(response.body);
@@ -233,7 +257,8 @@ class _ResultMatchState extends State<ResultMatch> {
 
   Future<List> getDataResult() async {
     time = 'GMTplus7';
-    String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/1";
+    String url =
+        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/1";
     http.Response response = await http.get(url);
     if (response.persistentConnection == true) {
       data = json.decode(response.body);
@@ -427,8 +452,8 @@ class _DrawerCompState extends State<DrawerComp> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: new Icon(Icons.all_inclusive,
-                            color: Colors.white),
+                        child:
+                            new Icon(Icons.all_inclusive, color: Colors.white),
                       ),
                       new Text('All Match',
                           style: TextStyle(color: Colors.white)),
@@ -437,8 +462,10 @@ class _DrawerCompState extends State<DrawerComp> {
                 ),
                 onPressed: () {
                   Navigator.of(context).pop();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AllMatchLayout()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AllMatchLayout()));
                 },
               ),
               Divider(
@@ -498,62 +525,6 @@ class _DrawerCompState extends State<DrawerComp> {
           )
         ],
       ),
-    );
-  }
-}
-
-class DataView extends StatefulWidget {
-  @override
-  _DataViewState createState() => _DataViewState();
-}
-
-class _DataViewState extends State<DataView> {
-  final String url =
-      "http://azsolusindo.com:8081/azsolusindo/public/api/matchSchedule?Post_Param_Data=0";
-
-  Timer time;
-  Map status;
-  Map message;
-  Map num_row;
-  Map data;
-  List datalist;
-
-  Future loadData() async {
-    http.Response response = await http.get(url);
-    data = json.decode(response.body);
-    setState(() {
-      datalist = data["data"];
-    });
-  }
-
-  @override
-    void initState() {
-      super.initState();
-      loadData();
-    }
-
-
-  @override
-  Widget build(BuildContext context) {
-    loadData();
-    return FlatButton(
-      child: Container(
-        child: Card(
-          color: Colors.transparent,
-          child: new Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: new Text('Data Crawl', style: TextStyle(color: Colors.white),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: new Text('${datalist.length}', style: TextStyle(color: Colors.white),),
-              )
-            ],
-          )
-        ),
-      ), onPressed: () {},
     );
   }
 }

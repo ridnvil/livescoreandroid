@@ -34,76 +34,73 @@ class _HomeLayoutState extends State<HomeLayout> {
           child: DrawerComp(),
         ),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        child: new Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            new Image(
-              image: new AssetImage("assets/bgls.png"),
-              fit: BoxFit.cover,
-              color: Colors.black54,
-              colorBlendMode: BlendMode.darken,
-            ),
-            Column(
-              children: <Widget>[
-                new Container(
-                  child: AppBar(
-                    title: Center(child: new Text('Live Score')),
-                    actions: <Widget>[
-                      new IconButton(
-                        icon: Icon(Icons.info_outline),
-                        onPressed: () {
-                          showDialog(
-                            context: context,
-                            child: AlertDialog(
-                              title: new Text('About Us'),
-                              content: Container(
-                                height: 200.0,
-                                child: Column(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: new Text(
-                                          '== Crawling Team A2Z Solusindo =='),
-                                    ),
-                                    new Text('Dezza'),
-                                    new Text('Exan'),
-                                    new Text('Ridwan'),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: new Text('== Peace =='),
-                                    ),
-                                  ],
-                                ),
+      body: new Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Image(
+            image: new AssetImage("assets/bgls.png"),
+            fit: BoxFit.cover,
+            color: Colors.black54,
+            colorBlendMode: BlendMode.darken,
+          ),
+          Column(
+            children: <Widget>[
+              new Container(
+                child: AppBar(
+                  title: Center(child: new Text('Live Score')),
+                  actions: <Widget>[
+                    new IconButton(
+                      icon: Icon(Icons.info_outline),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          child: AlertDialog(
+                            title: new Text('About Us'),
+                            content: Container(
+                              height: 200.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: new Text(
+                                        '== Crawling Team A2Z Solusindo =='),
+                                  ),
+                                  new Text('Dezza'),
+                                  new Text('Exan'),
+                                  new Text('Ridwan'),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: new Text('== Peace =='),
+                                  ),
+                                ],
                               ),
-                              actions: <Widget>[
-                                FlatButton(
-                                  child: new Text('Close'),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                              ],
                             ),
-                          );
-                        },
-                      )
-                    ],
-                    backgroundColor: Colors.transparent,
-                    leading: IconButton(
-                      icon: Icon(Icons.sort),
-                      onPressed: () => _drawer.currentState.openDrawer(),
-                    ),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: new Text('Close'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    )
+                  ],
+                  backgroundColor: Colors.transparent,
+                  leading: IconButton(
+                    icon: Icon(Icons.sort),
+                    onPressed: () => _drawer.currentState.openDrawer(),
                   ),
                 ),
-                Container(
-                  height: 500.0,
-                  child: LiveMatch(timezone: tz)),
-              ],
-            ),
-          ],
-        ),
+              ),
+              Container(
+                height: 500.0,
+                child: LiveMatch(timezone: tz)),
+            ],
+          ),
+        ],
       ),
     );
   }
