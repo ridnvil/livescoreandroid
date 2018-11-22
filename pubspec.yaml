@@ -39,6 +39,7 @@ flutter:
     - assets/bgls.png
     - assets/tzdb-2018g.tar.lz
     - assets/live.jpg
+    - assets/timezone.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

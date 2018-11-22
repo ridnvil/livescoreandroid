@@ -19,21 +19,23 @@ class _TimezoneState extends State<Timezone> {
   Future<List> getTimezone() async {
     http.Response response = await http.get(url);
     data = json.decode(response.body);
-    datalist = data["data"];
+    setState(() {
+      datalist = data["data"];
+    });
     return datalist;
   }
 
   @override
     void initState() {
       super.initState();
+      getTimezone();
     }
 
   @override
   Widget build(BuildContext context) {
-    getTimezone();
-    return DropdownMenuItem(
-      child: new Text('data'),
-      value: datalist.toList(),
+    //getTimezone();
+    return Scaffold(
+      
     );
   }
 }

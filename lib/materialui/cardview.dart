@@ -14,14 +14,14 @@ import 'package:uri/uri.dart';
 
 class LiveMatch extends StatefulWidget {
   final String timezone;
-  const LiveMatch({Key key, this.timezone}) : super(key: key);
+  const LiveMatch({Key key, @required this.timezone}) : super(key: key);
   @override
   _LiveMatchState createState() => _LiveMatchState();
 }
 
 class _LiveMatchState extends State<LiveMatch> {
-  //String timezone;
-  var time;
+  //String timezone = 'GMTplus9';
+  Timer time;
   Map status;
   Map message;
   Map num_row;
@@ -29,15 +29,21 @@ class _LiveMatchState extends State<LiveMatch> {
   List datalist;
 
   Future<List> getDataLive() async {
-    time = 'GMTplus7';
     String url =
-        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${time}/0";
+        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezone}/0";
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
       datalist = data["data"];
     });
-    //print(time);
+  }
+
+  Future reloadData(Timer time) async {
+    time = Timer(Duration(milliseconds: 15000), getDataLive);
+  }
+
+  Future onRefresh() async {
+    await getDataLive();
   }
 
   @override
@@ -48,10 +54,10 @@ class _LiveMatchState extends State<LiveMatch> {
 
   @override
   Widget build(BuildContext context) {
-    getDataLive();
+    reloadData(time);
     return Container(
       child: RefreshIndicator(
-        onRefresh: getDataLive,
+        onRefresh: onRefresh,
         child: new ListView.builder(
           itemCount: datalist == null ? 0 : datalist.length,
           itemBuilder: (BuildContext context, int index) {
@@ -524,6 +530,70 @@ class _DrawerCompState extends State<DrawerComp> {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class DrawerTimeZone extends StatefulWidget {
+  @override
+  _DrawerTimeZoneState createState() => _DrawerTimeZoneState();
+}
+
+class _DrawerTimeZoneState extends State<DrawerTimeZone> {
+  Map data;
+  List datalist;
+
+  Future<List> getTimezone() async {
+    var url = "http://192.168.2.51/azsolusindo/public/api/timezoneName";
+    http.Response response = await http.get(url);
+    data = json.decode(response.body);
+    setState(() {
+      datalist = data["data"];
+    });
+    return datalist;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getTimezone();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150.0,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end:
+              Alignment(0.8, 1.2), // 10% of the width, so there are ten blinds.
+          colors: [
+            const Color(0xFF0F2027),
+            const Color(0xFF061700),
+          ], // whitish to gray
+          tileMode: TileMode.mirror, // repeats the gradient over the canvas
+        ),
+      ),
+      child: ListView.builder(
+        itemCount: datalist.length,
+        itemBuilder: (BuildContext context, int index) {
+          return new Column(
+            children: <Widget>[
+              new Divider(
+                color: Colors.white,
+              ),
+              GestureDetector(
+                  child: new Text(datalist[index]["Name"],
+                      style: TextStyle(color: Colors.white)),
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
