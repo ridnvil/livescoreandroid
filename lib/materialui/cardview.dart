@@ -69,12 +69,12 @@ class _LiveMatchState extends State<LiveMatch> {
   }
 
   Future onSelectNotification(String payload){
-    debugPrint("payload : $payload");
+    //debugPrint("payload : $payload");
     showDialog(
       context: context,
       builder: (_) => new AlertDialog(
-        title: new Text('Payload'),
-        content: new Text('$payload'),
+        title: new Text('Goal Score'),
+        content: new Text(datalist[0]["home"]),
       ),
     );
   }
@@ -141,7 +141,7 @@ class _LiveMatchState extends State<LiveMatch> {
                                 datalist[index]["score"] != tempScore ? showNotification('Goal Score','${datalist[index]["score"]}') & Text(datalist[index]["score"],
                                     style: TextStyle(color: Colors.white)) : Text(tempScore,style: TextStyle(color: Colors.white)),
                                 new Text(datalist[index]["away"],
-                                    style: TextStyle(color: Colors.white))
+                                    style: TextStyle(color: Colors.white)),
                               ],
                             ),
                           ),
@@ -155,6 +155,7 @@ class _LiveMatchState extends State<LiveMatch> {
                 print(datalist[index]["contest"]);
                 //Navigator.of(context).pop();
                 showNotification('Goal Score',datalist[index]["score"]);
+                
                 Navigator.push(
                     context,
                     MaterialPageRoute(
