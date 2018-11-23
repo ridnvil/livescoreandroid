@@ -33,6 +33,7 @@ class _LiveMatchState extends State<LiveMatch> {
   List datalist;
   var tm;
   int tmCount = 0;
+  String tempScore;
 
   Future<List> getDataLive() async {
     String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneLive}/${this.widget.page}/${this.widget.pagestart}/${this.widget.pageend}";
@@ -87,6 +88,7 @@ class _LiveMatchState extends State<LiveMatch> {
         child: new ListView.builder(
           itemCount: datalist == null ? 0 : datalist.length,
           itemBuilder: (BuildContext context, int index) {
+            tempScore = datalist[index]["score"];
             return GestureDetector(
               child: new Card(
                 color: Colors.transparent,
@@ -136,8 +138,8 @@ class _LiveMatchState extends State<LiveMatch> {
                               children: <Widget>[
                                 new Text(datalist[index]["home"],
                                     style: TextStyle(color: Colors.white)),
-                                datalist[index]["score"] != datalist[index]["score"] ? showNotification('Goal Score',datalist[index]["score"]) & Text(datalist[index]["score"],
-                                    style: TextStyle(color: Colors.white)) : Text(datalist[index]["score"],style: TextStyle(color: Colors.white)),
+                                datalist[index]["score"] != tempScore ? showNotification('Goal Score','${datalist[index]["score"]}') & Text(datalist[index]["score"],
+                                    style: TextStyle(color: Colors.white)) : Text(tempScore,style: TextStyle(color: Colors.white)),
                                 new Text(datalist[index]["away"],
                                     style: TextStyle(color: Colors.white))
                               ],
