@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class AllMatchLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
-  static String zonetime;
+  static String zonetimeAll;
   
   @override
   _AllMatchLayoutState createState() => _AllMatchLayoutState();
@@ -15,31 +15,37 @@ class AllMatchLayout extends StatefulWidget {
 
 class _AllMatchLayoutState extends State<AllMatchLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
-  String timeZone = 'GMTplus7';
-  String gmt;
+  String timeZoneAll;
+  String gmtAll;
   Timer time;
 
-  Future<String> parseTZ() async {
+  Future<String> parseTZAll() async {
     setState(() {
-      timeZone = AllMatchLayout.zonetime;
-      gmt = timeZone.replaceAll(r'plus', '+');
+      timeZoneAll = AllMatchLayout.zonetimeAll;
+      gmtAll = timeZoneAll.replaceAll(r'plus', '+');
     });
   }
 
-  Future reloadTZ(Timer time) async {
-    time = Timer(Duration(milliseconds: 5000), parseTZ);
+  Future reloadTZAll(Timer time) async {
+    time = Timer(Duration(milliseconds: 2000), parseTZAll);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    AllMatchLayout.zonetimeAll = 'GMTplus7';
   }
 
   @override
   Widget build(BuildContext context) {
-    reloadTZ(time);
+    reloadTZAll(time);
     return Scaffold(
       key: _drawer,
       endDrawer: Opacity(
         opacity: 0.9,
         child: Drawer(
           elevation: 10.0,
-          child: DrawerTimeZone(locations: timeZone),
+          child: DrawerTimeZone(locations: timeZoneAll),
         ),
       ),
       body: Container(
@@ -56,7 +62,7 @@ class _AllMatchLayoutState extends State<AllMatchLayout> {
               children: <Widget>[
                 new Container(
                   child: AppBar(
-                    title: Center(child: gmt == null ? Text('All Match : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('All Match : ${gmt}',style: TextStyle(fontSize: 14.0))),
+                    title: Center(child: gmtAll == null ? Text('All Match : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('All Match : ${gmtAll}',style: TextStyle(fontSize: 14.0))),
                     actions: <Widget>[
                       new IconButton(
                         icon: Icon(Icons.av_timer),
@@ -67,9 +73,9 @@ class _AllMatchLayoutState extends State<AllMatchLayout> {
                   ),
                 ),
                 new Container(
-                    height: 500.0,
+                    height: 600.0,
                     padding: EdgeInsets.all(10.0),
-                    child: AllMatch(timezone: timeZone),
+                    child: AllMatch(timezoneAll: AllMatchLayout.zonetimeAll),
                   ),
               ],
             ),

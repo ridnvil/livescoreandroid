@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:livescore/uiapps/livestreaming_layout.dart';
 
@@ -9,16 +11,20 @@ class LiveStreaming extends StatefulWidget {
   final String time;
   final String halftime;
   final String status;
+  final String url;
+  final String id;
 
   const LiveStreaming(
       {Key key,
+      this.id,
       this.matchlive,
       this.home,
       this.away,
       this.score,
       this.time,
       this.halftime,
-      this.status})
+      this.status,
+      this.url})
       : super(key: key);
 
   @override
@@ -26,10 +32,38 @@ class LiveStreaming extends StatefulWidget {
 }
 
 class _LiveStreamingState extends State<LiveStreaming> {
-  String url = 'https://r1---sn-vgqsrn76.googlevideo.com/videoplayback?itag=22&ip=54.80.113.186&mm=31%2C26&ipbits=0&ratebypass=yes&dur=429.383&id=o-ADBgT193BEYePc6BUJDlmlsB008AIJzObNqCRw-mFo09&pl=14&lmt=1540004638933789&ms=au%2Conr&mv=m&mt=1542876943&txp=5531432&key=yt6&source=youtube&mime=video%2Fmp4&ei=fm_2W92wL4eJgwOona-gBg&expire=1542898654&c=WEB&requiressl=yes&sparams=dur%2Cei%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&signature=7FDE9B66B939D937975004F25CDF1062D465F131.445ED335FC1B3E7881FBF0442C4CD364B72A56F9&fvip=1&mn=sn-vgqsrn76%2Csn-tt1e7n7k&initcwndbps=2078750';
+  String urlContent = '';
+  String url;
+
+  String score;
+  String id;
+  String status;
+
+  Timer time;
+
+  Future streamData() async {
+    url = this.widget.url;
+    setState(() {    
+      score = this.widget.score;
+      status = this.widget.status;
+      id = this.widget.id;
+    });
+    print(url);
+  }
+
+  Future data(Timer time) async {
+    time = Timer(Duration(milliseconds: 5000), streamData);
+  }
+
+  @override
+    void initState() {
+      super.initState();
+      data(time);
+    }
 
   @override
   Widget build(BuildContext context) {
+    data(time);
     return Scaffold(
       body: new Stack(
         fit: StackFit.expand,

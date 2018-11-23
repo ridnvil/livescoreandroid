@@ -5,13 +5,14 @@ import 'package:livescore/materialui/timezone.dart';
 import 'package:timezone/timezone.dart';
 import 'package:timezone/standalone.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'dart:async';
 import 'dart:convert';
 
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
-  static String zonetime;
+  static String zonetimeLive;
 
   const HomeLayout({Key key}) : super(key: key);
   @override
@@ -20,27 +21,27 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
-  var _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   List<String> list;
-  String timeZone = 'GMTplus7';
+  String timeZoneHome;
   Timer time;
   String gmt;
 
   Future<String> parseTZ() async {
     setState(() {
-      timeZone = HomeLayout.zonetime;
-      gmt = timeZone.replaceAll(r'plus', '+');
+      timeZoneHome =  HomeLayout.zonetimeLive;
+      gmt = timeZoneHome.replaceAll(r'plus', '+');
     });
   }
 
   Future reloadTZ(Timer time) async {
-    time = Timer(Duration(milliseconds: 5000), parseTZ);
+    time = await Timer(Duration(milliseconds: 2000), parseTZ);
   }
 
   @override
   void initState() {
     super.initState();
+    HomeLayout.zonetimeLive = 'GMTplus7';
   }
 
   @override
@@ -59,7 +60,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         opacity: 0.9,
         child: Drawer(
           elevation: 10.0,
-          child: DrawerTimeZone(locations: timeZone),
+          child: DrawerTimeZone(locations: timeZoneHome),
         ),
       ),
       body: new Stack(
@@ -85,11 +86,13 @@ class _HomeLayoutState extends State<HomeLayout> {
                   backgroundColor: Colors.transparent,
                   leading: IconButton(
                     icon: Icon(Icons.sort),
-                    onPressed: () => _drawer.currentState.openDrawer(),
+                    onPressed: () {
+                      _drawer.currentState.openDrawer();
+                    },
                   ),
                 ),
               ),
-              Container(height: 510.0, child: LiveMatch(timezone: timeZone)),
+              Container(height: 600.0, child: LiveMatch(timezoneLive: HomeLayout.zonetimeLive, page: 0)),
             ],
           ),
         ],

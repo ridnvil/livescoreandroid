@@ -6,43 +6,45 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ResultLayout extends StatefulWidget {
-  static String zonetime;
+  static final String tag = "/MAIN_LAYOUT";
+  static String zonetimeResult;
   @override
   _ResultLayoutState createState() => _ResultLayoutState();
 }
 
 class _ResultLayoutState extends State<ResultLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
-  String timeZone = 'GMTplus7';
-  String gmt;
+  String timeZoneResult;
+  String gmtResult;
   Timer time;
 
-  Future<String> parseTZ() async {
+  Future<String> parseTZResult() async {
     setState(() {
-      timeZone = ResultLayout.zonetime;
-      gmt = timeZone.replaceAll(r'plus', '+');
+      timeZoneResult = ResultLayout.zonetimeResult;
+      gmtResult = timeZoneResult.replaceAll(r'plus', '+');
     });
   }
 
-  Future reloadTZ(Timer time) async {
-    time = Timer(Duration(milliseconds: 5000), parseTZ);
+  Future reloadTZResult(Timer time) async {
+    time = Timer(Duration(milliseconds: 2000), parseTZResult);
   }
 
   @override
   void initState() {
     super.initState();
+    ResultLayout.zonetimeResult = 'GMTplus7';
   }
 
   @override
   Widget build(BuildContext context) {
-    reloadTZ(time);
+    reloadTZResult(time);
     return Scaffold(
       key: _drawer,
       endDrawer: Opacity(
         opacity: 0.9,
         child: Drawer(
           elevation: 10.0,
-          child: DrawerTimeZone(locations: timeZone),
+          child: DrawerTimeZone(locations: timeZoneResult),
         ),
       ),
       body: Container(
@@ -59,7 +61,7 @@ class _ResultLayoutState extends State<ResultLayout> {
               children: <Widget>[
                 new Container(
                   child: AppBar(
-                    title: Center(child: gmt == null ? Text('Result : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('Result : ${gmt}',style: TextStyle(fontSize: 14.0))),
+                    title: Center(child: gmtResult == null ? Text('Result : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('Result : ${gmtResult}',style: TextStyle(fontSize: 14.0))),
                     actions: <Widget>[
                       new IconButton(
                         icon: Icon(Icons.av_timer),
@@ -70,9 +72,9 @@ class _ResultLayoutState extends State<ResultLayout> {
                   ),
                 ),
                 new Container(
-                  height: 512.0,
+                  height: 600.0,
                   padding: EdgeInsets.all(10.0),
-                  child: ResultMatch(timezone: timeZone),
+                  child: ResultMatch(timezoneResult: ResultLayout.zonetimeResult),
                 ),
               ],
             ),
