@@ -669,7 +669,7 @@ class _DrawerTimeZoneState extends State<DrawerTimeZone> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150.0,
+      //width: 50.0,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
