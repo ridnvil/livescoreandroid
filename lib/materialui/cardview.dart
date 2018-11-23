@@ -691,8 +691,11 @@ class _DrawerTimeZoneState extends State<DrawerTimeZone> {
                 color: Colors.white,
               ),
               GestureDetector(
-                child: new Text(datalist[index]["Name"],
-                    style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: new Text(datalist[index]["Name"],
+                      style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                ),
                 onTap: () {
                   Navigator.pop(context);
                   HomeLayout.zonetimeLive = datalist[index]["Name"]
@@ -702,9 +705,6 @@ class _DrawerTimeZoneState extends State<DrawerTimeZone> {
                   AllMatchLayout.zonetimeAll = datalist[index]["Name"]
                       .replaceAll(new RegExp(r'\+'), 'plus');
                 },
-              ),
-              new Divider(
-                color: Colors.white,
               ),
             ],
           );
