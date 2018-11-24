@@ -15,9 +15,10 @@ import 'package:uri/uri.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LiveMatch extends StatefulWidget {
+  static List dataJson;
   final String timezoneLive;
-  final int pagestart;
-  final int pageend;
+  final String pagestart;
+  final String pageend;
   final int page;
   const LiveMatch({Key key, @required this.timezoneLive, this.pagestart, this.pageend, this.page}) : super(key: key);
   @override
@@ -36,8 +37,8 @@ class _LiveMatchState extends State<LiveMatch> {
   String tempScore;
 
   Future<List> getDataLive() async {
-    String url ="http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneLive}/${this.widget.page}/${this.widget.pagestart}/${this.widget.pageend}";
-    List datalisthold;
+    String url ="http://azsolusindo.info/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneLive}/${this.widget.page}/${this.widget.pagestart}/${this.widget.pageend}";
+    //List datalisthold;
     http.Response response;
     
     response = await http.get(url);
@@ -45,7 +46,9 @@ class _LiveMatchState extends State<LiveMatch> {
       data = json.decode(response.body);
       datalist = data["data"];
       sendUrl = url;
+      LiveMatch.dataJson = datalist;
     });
+    print(url);
   }
 
   Future reloadData(Timer time) async {
@@ -131,18 +134,20 @@ class _LiveMatchState extends State<LiveMatch> {
                               ],
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.all(5.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                new Text(datalist[index]["home"],
-                                    style: TextStyle(color: Colors.white)),
-                                datalist[index]["score"] != tempScore ? showNotification('Goal Score','${datalist[index]["score"]}') & Text(datalist[index]["score"],
-                                    style: TextStyle(color: Colors.white)) : Text(tempScore,style: TextStyle(color: Colors.white)),
-                                new Text(datalist[index]["away"],
-                                    style: TextStyle(color: Colors.white)),
-                              ],
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.all(5.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  new Text(datalist[index]["home"], overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.white)),
+                                  datalist[index]["score"] != tempScore ? showNotification('Goal Score','${datalist[index]["score"]}') & Text(datalist[index]["score"],
+                                      style: TextStyle(color: Colors.white)) : Text(tempScore,style: TextStyle(color: Colors.white)),
+                                  new Text(datalist[index]["away"], overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.white)),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -154,7 +159,7 @@ class _LiveMatchState extends State<LiveMatch> {
               onTap: () {
                 print(datalist[index]["contest"]);
                 //Navigator.of(context).pop();
-                showNotification('Goal Score',datalist[index]["score"]);
+                //showNotification('Goal Score',datalist[index]["score"]);
                 
                 Navigator.push(
                     context,
@@ -200,7 +205,7 @@ class _AllMatchState extends State<AllMatch> {
 
   Future<List> getAllMatch() async {
     String url =
-        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneAll}/2";
+        "http://azsolusindo.info/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneAll}/2";
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
@@ -322,7 +327,7 @@ class _ResultMatchState extends State<ResultMatch> {
 
   Future<List> getDataResult() async {
     String url =
-        "http://192.168.2.51/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneResult}/1";
+        "http://azsolusindo.info/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneResult}/1";
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
@@ -436,7 +441,7 @@ class LigaMatch extends StatefulWidget {
 
 class _LigaMatchState extends State<LigaMatch> {
   final String url =
-      "http://azsolusindo.com:8081/phprest/api/match/matchLivePerLig.php";
+      "http://192.168.2.51/phprest/api/match/matchLivePerLig.php";
 
   Map status;
   Map message;
@@ -473,11 +478,15 @@ class _LigaMatchState extends State<LigaMatch> {
 }
 
 class DrawerComp extends StatefulWidget {
+
+  const DrawerComp({Key key}):super(key: key);
   @override
   _DrawerCompState createState() => _DrawerCompState();
 }
 
 class _DrawerCompState extends State<DrawerComp> {
+  int page = 3;
+  int pageAll = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -514,13 +523,39 @@ class _DrawerCompState extends State<DrawerComp> {
                         child: new Icon(Icons.play_circle_outline,
                             color: Colors.red),
                       ),
-                      new Text('Live Match',
+                      new Text('Live',
                           style: TextStyle(color: Colors.white)),
                     ],
                   ),
                 ),
                 onPressed: () {
                   Navigator.of(context).pop();
+                  HomeLayout.pageLive = page;
+                },
+              ),
+              Divider(
+                color: Colors.white,
+              ),
+              FlatButton(
+                padding: EdgeInsets.only(right: 0.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                      top: 5.0, bottom: 5.0, left: 10.0, right: 90.0),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Icon(Icons.play_circle_outline,
+                            color: Colors.white),
+                      ),
+                      new Text('Live & Upcoming Match',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  HomeLayout.pageLive = pageAll;
                 },
               ),
               Divider(
@@ -651,7 +686,7 @@ class _DrawerTimeZoneState extends State<DrawerTimeZone> {
 
   Future<List> getTimezone() async {
     var url =
-        "http://192.168.2.51/azsolusindo/public/api/timezoneNameForAndroid";
+        "http://azsolusindo.info/azsolusindo/public/api/timezoneNameForAndroid";
     http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {

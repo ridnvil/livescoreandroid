@@ -72,11 +72,11 @@ class _AllMatchLayoutState extends State<AllMatchLayout> {
                     backgroundColor: Colors.transparent,
                   ),
                 ),
-                new Container(
-                    height: 600.0,
-                    padding: EdgeInsets.all(10.0),
-                    child: AllMatch(timezoneAll: AllMatchLayout.zonetimeAll),
-                  ),
+                Expanded(
+                  child: Container(
+                      child: AllMatch(timezoneAll: AllMatchLayout.zonetimeAll),
+                    ),
+                ),
               ],
             ),
           ],

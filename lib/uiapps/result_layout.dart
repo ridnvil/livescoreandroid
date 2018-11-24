@@ -71,11 +71,11 @@ class _ResultLayoutState extends State<ResultLayout> {
                     backgroundColor: Colors.transparent,
                   ),
                 ),
-                new Container(
-                  height: 600.0,
-                  padding: EdgeInsets.all(10.0),
-                  child: ResultMatch(timezoneResult: ResultLayout.zonetimeResult),
-                ),
+                Expanded(
+                    child: LiveMatch(
+                        timezoneLive: ResultLayout.zonetimeResult,
+                        page: 0)
+                )
               ],
             ),
           ],

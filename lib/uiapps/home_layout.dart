@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:livescore/materialui/cardview.dart';
+import 'package:dropdown_menu/dropdown_menu.dart';
 import 'package:livescore/materialui/timezone.dart';
 import 'package:timezone/timezone.dart';
 import 'package:timezone/standalone.dart';
@@ -13,6 +14,7 @@ import 'dart:convert';
 class HomeLayout extends StatefulWidget {
   static final String tag = "/MAIN_LAYOUT";
   static String zonetimeLive;
+  static int pageLive;
 
   const HomeLayout({Key key}) : super(key: key);
   @override
@@ -21,27 +23,50 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   GlobalKey<ScaffoldState> _drawer = new GlobalKey<ScaffoldState>();
+  final TextEditingController _itemStart = new TextEditingController();
+  final TextEditingController _itemEnd = new TextEditingController();
 
   List<String> list;
   String timeZoneHome;
   Timer time;
   String gmt;
+  List dataJsonParse;
+  String itemStart = 'null';
+  String itemEnd = 'null';
+  int page;
+
+  List<String> value = new List<String>();
 
   Future<String> parseTZ() async {
     setState(() {
-      timeZoneHome =  HomeLayout.zonetimeLive;
+      timeZoneHome = HomeLayout.zonetimeLive;
+      page = HomeLayout.pageLive;
       gmt = timeZoneHome.replaceAll(r'plus', '+');
     });
   }
 
   Future reloadTZ(Timer time) async {
-    time = await Timer(Duration(milliseconds: 2000), parseTZ);
+    time = await Timer(Duration(milliseconds: 5000), parseTZ);
+    //dataJsonParse = LiveMatch.dataJson; // Data from cardview.dart
+  }
+
+  void onChangedStart(String value) {
+    setState(() {
+      itemStart = value;
+    });
+  }
+
+  void onChangedEnd(String value) {
+    setState(() {
+      itemEnd = value;
+    });
   }
 
   @override
   void initState() {
     super.initState();
     HomeLayout.zonetimeLive = 'GMTplus7';
+    HomeLayout.pageLive = 0;
   }
 
   @override
@@ -76,7 +101,12 @@ class _HomeLayoutState extends State<HomeLayout> {
             children: <Widget>[
               new Container(
                 child: AppBar(
-                  title: Center(child: gmt == null ? Text('Live Score : GMT+7',style: TextStyle(fontSize: 14.0)) : Text('Live Score : ${gmt}',style: TextStyle(fontSize: 14.0))),
+                  title: Center(
+                      child: gmt == null
+                          ? Text('Live Score : GMT+7',
+                              style: TextStyle(fontSize: 14.0))
+                          : Text('Live Score : ${gmt}',
+                              style: TextStyle(fontSize: 14.0))),
                   actions: <Widget>[
                     new IconButton(
                       icon: Icon(Icons.av_timer),
@@ -92,11 +122,22 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                 ),
               ),
-              Container(height: 600.0, child: LiveMatch(timezoneLive: HomeLayout.zonetimeLive, page: 0)),
+              Expanded(
+                  child: LiveMatch(
+                timezoneLive: HomeLayout.zonetimeLive,
+                page: HomeLayout.pageLive,
+                pagestart: itemStart,
+                pageend: itemEnd,
+              ))
             ],
           ),
         ],
       ),
     );
+  }
+
+  void _submission(String value) {
+    print(_itemStart.text);
+    print(_itemEnd.text);
   }
 }

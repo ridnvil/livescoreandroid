@@ -21,7 +21,7 @@ class _StreamingState extends State<Streaming> {
   @override
   void initState() {
     super.initState();
-    playerController = VideoPlayerController.network(this.widget.urlVideo)
+    playerController = VideoPlayerController.network('https://r1---sn-2a5thxqp5-jb3s.googlevideo.com/videoplayback?signature=24C3F86BE7EB05C13454BD024FD3E20A3D268284.041E614487B1DA9A946E3E69EC819AF09BA84CAF&dur=429.383&fvip=1&ei=aWL5W8OYK8HH8wS1763QDA&gir=yes&sparams=clen,dur,ei,expire,gir,id,ip,ipbits,ipbypass,itag,lmt,mime,mip,mm,mn,ms,mv,pcm2cms,pl,ratebypass,requiressl,source&lmt=1540001023148663&id=o-AJ11nBSmqf1D8R2sZEA2mh9di5C27hsJiDPa-Nu6VpRS&expire=1543091913&ip=54.156.117.75&mime=video%2Fmp4&requiressl=yes&source=youtube&pl=24&itag=18&clen=39453550&c=WEB&key=cms1&txp=5531432&ipbits=0&ratebypass=yes&redirect_counter=1&rm=sn-vgqell7e&fexp=23763603&req_id=b4606ace8693a3ee&cms_redirect=yes&ipbypass=yes&mip=202.80.216.150&mm=31&mn=sn-2a5thxqp5-jb3s&ms=au&mt=1543070262&mv=m&pcm2cms=yes')
       ..addListener(() {
         final bool isPlaying = playerController.value.isPlaying;
         if (isPlaying != _isPlaying) {
