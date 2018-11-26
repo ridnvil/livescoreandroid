@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:livescore/materialui/cardview.dart';
 import 'package:livescore/uiapps/livestreaming_layout.dart';
 
 class LiveStreaming extends StatefulWidget {
@@ -33,37 +34,43 @@ class LiveStreaming extends StatefulWidget {
 
 class _LiveStreamingState extends State<LiveStreaming> {
   String urlContent = '';
-  String url;
 
   String score;
   String id;
   String status;
+  List datalist;
 
   Timer time;
 
-  Future streamData() async {
-    url = this.widget.url;
+  Stream streamData() async* {
     setState(() {    
-      score = this.widget.score;
-      status = this.widget.status;
       id = this.widget.id;
+      datalist = LiveMatch.dataJson;
+
+      for(var i = 0; i < datalist.length; i++){
+        if(this.widget.id[i] == datalist[i]["id"] && this.widget.score[i] == datalist[i]["score"] && this.widget.status[i] == datalist[i]["status"]){
+          score = datalist[i]["score"];
+          status = datalist[i]["status"];
+        }
+      }
+
     });
-    print(url);
   }
 
-  Future data(Timer time) async {
-    time = Timer(Duration(milliseconds: 5000), streamData);
-  }
+  // Future data(Timer time) async {
+  //   time = Timer(Duration(milliseconds: 5000), streamData);
+  // }
 
   @override
     void initState() {
       super.initState();
-      data(time);
+      //data(time);
+      streamData();
     }
 
   @override
   Widget build(BuildContext context) {
-    data(time);
+    //data(time);
     return Scaffold(
       body: new Stack(
         fit: StackFit.expand,
@@ -146,18 +153,49 @@ class _LiveStreamingState extends State<LiveStreaming> {
                               Expanded(
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("${widget.status}",
-                                    style: TextStyle(color: Colors.white),
-                                    textAlign: TextAlign.center),
+                                child: StreamBuilder(
+                                  stream: streamData(),
+                                  builder: (context, snapshot){
+                                    switch (snapshot.connectionState){
+                                      case ConnectionState.none: return new Text('Error',style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                      case ConnectionState.waiting: return new Text(snapshot.data.status,style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                      default:
+                                        if (snapshot.hasError) {
+                                          return new Text('');
+                                        }else{
+                                          return new Text(status,
+                                            style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                        }
+                                    }
+                                  },
+                                ),
                               )),
                               Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(widget.score,
-                                      style: TextStyle(color: Colors.white),
-                                      textAlign: TextAlign.center),
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: StreamBuilder(
+                                  stream: streamData(),
+                                  builder: (context, snapshot){
+                                    switch (snapshot.connectionState){
+                                      case ConnectionState.none: return new Text('Error',style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                      case ConnectionState.waiting: return new Text(snapshot.data.score,style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                      default:
+                                        if (snapshot.hasError) {
+                                          return new Text('');
+                                        }else{
+                                          return new Text(snapshot.data.score,
+                                            style: TextStyle(color: Colors.white),
+                                            textAlign: TextAlign.center);
+                                        }
+                                    }
+                                  },
                                 ),
-                              ),
+                              )),
                               Expanded(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -168,8 +206,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Streaming(
-                                                    urlVideo:url)));
+                                              builder: (context) => Streaming()));
                                     },
                                   ),
                                 ),

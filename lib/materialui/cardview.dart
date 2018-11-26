@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
@@ -16,17 +17,25 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LiveMatch extends StatefulWidget {
   static List dataJson;
+  static String connectBy;
   final String timezoneLive;
   final String pagestart;
   final String pageend;
   final int page;
-  const LiveMatch({Key key, @required this.timezoneLive, this.pagestart, this.pageend, this.page}) : super(key: key);
+  const LiveMatch(
+      {Key key,
+      @required this.timezoneLive,
+      this.pagestart,
+      this.pageend,
+      this.page})
+      : super(key: key);
   @override
   _LiveMatchState createState() => _LiveMatchState();
 }
 
 class _LiveMatchState extends State<LiveMatch> {
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+  StreamSubscription connectivity;
 
   String sendUrl;
   Timer time;
@@ -35,50 +44,82 @@ class _LiveMatchState extends State<LiveMatch> {
   var tm;
   int tmCount = 0;
   String tempScore;
+  bool boolHasConnection;
 
-  Future<List> getDataLive() async {
-    String url ="http://azsolusindo.info/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneLive}/${this.widget.page}/${this.widget.pagestart}/${this.widget.pageend}";
+  Future<Null> getConnectionStatus() async {
+    connectivity = new Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      debugPrint(result.toString());
+      if (result == ConnectivityResult.mobile ||
+          result == ConnectivityResult.wifi) {
+        setState(() {
+          boolHasConnection = true;
+          LiveMatch.connectBy = result.toString();
+          getDataJson();
+        });
+      } else {
+        setState(() {
+          boolHasConnection = false;
+        });
+      }
+    });
+  }
+
+  Future<List> getDataJson() async {
+    String url =
+        "http://azsolusindo.info/azsolusindo/public/api/matchAndroidSchedule/${this.widget.timezoneLive}/${this.widget.page}/${this.widget.pagestart}/${this.widget.pageend}";
     //List datalisthold;
+
     http.Response response;
-    
     response = await http.get(url);
+    data = json.decode(response.body);
     setState(() {
-      data = json.decode(response.body);
       datalist = data["data"];
-      sendUrl = url;
       LiveMatch.dataJson = datalist;
     });
-    print(url);
   }
 
   Future reloadData(Timer time) async {
-    time = Timer(Duration(milliseconds: 10000), getDataLive);
+    time = Timer(Duration(milliseconds: 10000), getConnectionStatus);
   }
 
   Future onRefresh() async {
-    await getDataLive();
-    await reloadData(time);
+    await getDataJson();
   }
 
   @override
   void initState() {
     super.initState();
-    getDataLive();
+    getConnectionStatus();
     flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
     var android = new AndroidInitializationSettings('@mipmap/ic_launcher');
     var iOS = new IOSInitializationSettings();
     var initSetting = new InitializationSettings(android, iOS);
-    flutterLocalNotificationsPlugin.initialize(initSetting, onSelectNotification: onSelectNotification);
+    flutterLocalNotificationsPlugin.initialize(initSetting,
+        onSelectNotification: onSelectNotification);
   }
 
-  Future onSelectNotification(String payload){
+  @override
+    void dispose() {
+      super.dispose();
+      try {
+        connectivity?.cancel();
+      } catch (exception, stackTrace) {
+        print(exception.toString());
+      }finally{
+        super.dispose();
+      }
+    }
+
+  Future onSelectNotification(String payload) {
     //debugPrint("payload : $payload");
     showDialog(
       context: context,
       builder: (_) => new AlertDialog(
-        title: new Text('Goal Score'),
-        content: new Text(datalist[0]["home"]),
-      ),
+            title: new Text('Goal Score'),
+            content: new Text(datalist[0]["home"]),
+          ),
     );
   }
 
@@ -91,9 +132,8 @@ class _LiveMatchState extends State<LiveMatch> {
         child: new ListView.builder(
           itemCount: datalist == null ? 0 : datalist.length,
           itemBuilder: (BuildContext context, int index) {
-            tempScore = datalist[index]["score"];
             return GestureDetector(
-              child: new Card(
+              child: Card(
                 color: Colors.transparent,
                 child: Container(
                   padding: EdgeInsets.all(10.0),
@@ -106,13 +146,17 @@ class _LiveMatchState extends State<LiveMatch> {
                         child: Row(
                           children: <Widget>[
                             Expanded(
-                                child: Text('${datalist[index]["id"]} : ${datalist[index]["time"]}',
+                                child: Text('${datalist[index]["time"]}',
                                     style: TextStyle(color: Colors.white))),
                             Expanded(
-                              child: datalist[index]["status"] == "0" ? Text("Upcoming Live",style: TextStyle(
-                                      color: Colors.white30, fontSize: 12.0)) : Text("LIVE",
-                                  style: TextStyle(
-                                      color: Colors.red, fontSize: 12.0)),
+                              child: datalist[index]["status"] == "0"
+                                  ? Text("Upcoming Live",
+                                      style: TextStyle(
+                                          color: Colors.white30,
+                                          fontSize: 12.0))
+                                  : Text("LIVE",
+                                      style: TextStyle(
+                                          color: Colors.red, fontSize: 12.0)),
                             ),
                             Text("Half Time : ${datalist[index]["ht"]}",
                                 style: TextStyle(color: Colors.white)),
@@ -128,9 +172,11 @@ class _LiveMatchState extends State<LiveMatch> {
                               children: <Widget>[
                                 new Text(datalist[index]["contest"],
                                     style: TextStyle(color: Colors.white)),
-                                datalist[index]["status"] == "0" ? Text('-',
-                                    style: TextStyle(color: Colors.white)) : Text(datalist[index]["status"],
-                                    style: TextStyle(color: Colors.white)),
+                                datalist[index]["status"] == "0"
+                                    ? Text('-',
+                                        style: TextStyle(color: Colors.white))
+                                    : Text(datalist[index]["status"],
+                                        style: TextStyle(color: Colors.white)),
                               ],
                             ),
                           ),
@@ -140,11 +186,17 @@ class _LiveMatchState extends State<LiveMatch> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  new Text(datalist[index]["home"], overflow: TextOverflow.ellipsis,
+                                  new Text(datalist[index]["home"],
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(color: Colors.white)),
-                                  datalist[index]["score"] != tempScore ? showNotification('Goal Score','${datalist[index]["score"]}') & Text(datalist[index]["score"],
-                                      style: TextStyle(color: Colors.white)) : Text(tempScore,style: TextStyle(color: Colors.white)),
-                                  new Text(datalist[index]["away"], overflow: TextOverflow.ellipsis,
+                                  datalist[index]["score"] != tempScore
+                                      ? Text(datalist[index]["score"],
+                                          style: TextStyle(color: Colors.white))
+                                      : Text(tempScore,
+                                          style:
+                                              TextStyle(color: Colors.white)),
+                                  new Text(datalist[index]["away"],
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(color: Colors.white)),
                                 ],
                               ),
@@ -160,7 +212,7 @@ class _LiveMatchState extends State<LiveMatch> {
                 print(datalist[index]["contest"]);
                 //Navigator.of(context).pop();
                 //showNotification('Goal Score',datalist[index]["score"]);
-                
+
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -183,7 +235,8 @@ class _LiveMatchState extends State<LiveMatch> {
   }
 
   showNotification(String title, String score) async {
-    var android = new AndroidNotificationDetails('channelId', 'channelName', 'channelDescription');
+    var android = new AndroidNotificationDetails(
+        'channelId', 'channelName', 'channelDescription');
     var iOS = new IOSNotificationDetails();
     var platform = new NotificationDetails(android, iOS);
     await flutterLocalNotificationsPlugin.show(0, title, score, platform);
@@ -478,8 +531,7 @@ class _LigaMatchState extends State<LigaMatch> {
 }
 
 class DrawerComp extends StatefulWidget {
-
-  const DrawerComp({Key key}):super(key: key);
+  const DrawerComp({Key key}) : super(key: key);
   @override
   _DrawerCompState createState() => _DrawerCompState();
 }
@@ -523,8 +575,7 @@ class _DrawerCompState extends State<DrawerComp> {
                         child: new Icon(Icons.play_circle_outline,
                             color: Colors.red),
                       ),
-                      new Text('Live',
-                          style: TextStyle(color: Colors.white)),
+                      new Text('Live', style: TextStyle(color: Colors.white)),
                     ],
                   ),
                 ),

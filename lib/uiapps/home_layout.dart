@@ -33,6 +33,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   List dataJsonParse;
   String itemStart = 'null';
   String itemEnd = 'null';
+  String connecBy;
   int page;
 
   List<String> value = new List<String>();
@@ -42,6 +43,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       timeZoneHome = HomeLayout.zonetimeLive;
       page = HomeLayout.pageLive;
       gmt = timeZoneHome.replaceAll(r'plus', '+');
+      connecBy = LiveMatch.connectBy;
     });
   }
 
